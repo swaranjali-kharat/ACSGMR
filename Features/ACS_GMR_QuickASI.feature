@@ -33,6 +33,14 @@ Background: Launch the ACS application and login the application ACS_GMR QuickAS
      Then I logout with "ACS USER" airline user given in "Login" sheet ACS_GMR QuickASI
      Then To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI
      Then For Bonded shipments verify whether the user is able to sent the CO request to Bonded Trucker ACS_GMR QuickASI Direct NonBoded
-     Then I login with "ACS AADHYA" Adhya user given in "Login" sheet ACS_GMR QuickASI Direct NonBoded
-     Then I logout with "ACS USER" airline user given in "Login" sheet ACS_GMR QuickASI Direct NonBoded
-     Then To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI Direct NonBoded
+     Then I login with "ACS AADHYA" Adhya user given in "Login" sheet ACS_GMR QuickASI Direct NonBonded
+     Then I logout with "ACS USER" airline user given in "Login" sheet ACS_GMR QuickASI Direct NonBonded
+     Then To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI Direct NonBonded
+     Then For Bonded shipments verify whether the user is able to sent the CO request to Bonded Trucker ACS_GMR QuickASI Console Bonded
+     Then I login with "ACS AADHYA" Adhya user given in "Login" sheet ACS_GMR QuickASI Console Bonded
+     Then I logout with "ACS USER" airline user given in "Login" sheet ACS_GMR QuickASI Console Bonded
+     Then To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI Console Bonded
+     Then For Bonded shipments verify whether the user is able to sent the CO request to Bonded Trucker ACS_GMR QuickASI Console NonBonded
+     Then I login with "ACS AADHYA" Adhya user given in "Login" sheet ACS_GMR QuickASI Console NonBonded
+     Then I logout with "ACS USER" airline user given in "Login" sheet ACS_GMR QuickASI Console NonBonded
+     Then To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI Console NonBonded
