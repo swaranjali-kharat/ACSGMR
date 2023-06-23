@@ -661,8 +661,17 @@ public class ACS_GMR_QuickASI {
 				wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
 				wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
 				wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
+		}
+		@Then("^Able to generate single VT for 2 different AWB ACS_GMR QuickASI$")
+		public void able_to_generate_single_VT_for_2_different_AWB_ACS_GMR_QuickASI() throws InterruptedException, AWTException{ 
 				
 				//-------------------------------Vehicle Token----------------------------------------------------------
+			    wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
+		   	
+		   	    driver.switchTo().frame(0);Thread.sleep(1000);
+		   	    wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
+		   	
+		   	    wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox);Thread.sleep(2000);
 				//wm.JavascriptExecutorClick(driver, gmr.SBDetails);Thread.sleep(4000);//---------kadun takne
 				//wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
 				wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
