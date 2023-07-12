@@ -40,21 +40,22 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import Methods.CommonMethods;
 import TestDataOperations.TestDataReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ACS_GMR_Negative_Practice {
 	
-	private static final CharSequence AWB_ACSGMR_04 = "21062086";
+	//private static final CharSequence AWB_ACSGMR_04 = "07072096";
 
 
 		private static final String WebElement = null;
 		private static final WebDriver Driver = null;
 		public boolean verify;
 
-		@When("I login with {string} user given in {string} sheet ACS_GMR Negative and Practice")
-		public void i_login_with_user_given_in_sheet_ACS_GMR_QuickASI(String entity, String sheetName) throws Throwable {
+		@When("I login with {string} user given in {string} sheet ACS_GMR_Practice")
+		public void i_login_with_use_given_in_sheet_ACS_GMR_Practice(String entity, String sheetName) throws Throwable {
 			Entity = entity;
 			TestDataReader.ReadLoginDetails(Entity);
 			Thread.sleep(500);
@@ -65,119 +66,266 @@ public class ACS_GMR_Negative_Practice {
 			Thread.sleep(4000);	
 			
 			
-	}
-		@Then("^To verify user able to create direct AWB in FF login and 1SB TSP done with 1VT in CB login or not ACS_GMR Negative and Practice$")
-		public void To_verify_user_able_to_create_direct_AWB_in_FF_login_and_1SB_TSP_done_with_1VT_in_CB_login_or_not_ACS_GMR_Negative_and_Practice() throws InterruptedException, AWTException {
-			
-			gmr.AllRaadioBtn();
-		//--------------------------Quick ASI For Direct For Non Bonded-------------------------------------------------------
-			
-		Actions action1 = new Actions(driver);
-		action1.moveToElement(gmr.eAWBTab).perform();
-		Thread.sleep(1000);
+		}	
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASI);Thread.sleep(2000);
-		/*gmr.QuickASI();
+//		TC 5,6,17
+		
+		/*@Then("To verify user able to create Direct AWB in FF login ACS_GMR_Practice {string}")
+		public void To_verify_user_able_to_create_Direct_AWB_in_FF_login_ACS_GMR_Practice(String mawbno_17) throws InterruptedException, AWTException {
+		
+		gmr.QuickASITab();
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+		gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
+
+		gmr.QuickASIMAWBNo.sendKeys(mawbno_17);
+		Thread.sleep(2000);
+		gmr.QuickASIForAadhya();
+		Thread.sleep(2000);
+		gmr.MAWBListInput.click();Thread.sleep(2000);
+		gmr.MAWBListInput.sendKeys(mawbno_17);
 		gmr.MAWBInput();
-		gmr.MAWBASI();
+		gmr.MAWBASI();	
 		gmr.CO();
+		
 		wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-		Thread.sleep(8000);*/
+
+		Thread.sleep(8000);
 		}
 		
 		
-		/*@Then("I login with {string} Airline user given in {string} sheet ACS_GMR Negative and Practice")
-		public void I_login_with_Airline_user_given_in_sheet_ACS_GMR_Negative_and_Practice(String entity, String sheetName) throws Throwable {
-			
-			Entity = entity;
-			TestDataReader.ReadLoginDetails(Entity);
-			Thread.sleep(500);
-			System.out.println("usr= " + Username);
-			System.out.println("pwd= " + Password);
-			// loginScreen.isLoginScreenDisplayed();
-			loginScreen.Login(Entity, Username, Password);
-			Thread.sleep(4000);	
+		@Then("To verify Airline login ACS_GMR_Practice {string}")
+		public void To_verify_Airline_login_ACS_GMR_Practice(String mawbno_17) throws InterruptedException, AWTException {
 			
 			gmr.Airline();
-			}*/
-		
-		/*@Then("I login with {string} Custom Broker Aadhya user given in {string} sheet ACS_GMR Negative and Practice")
-		public void i_login_with_Customer_Broker_Aadhya_user_given_in_sheet_ACS_GMR_Negative_and_Practice(String entity, String sheetName) throws Throwable {
+			gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + mawbno_17);
+			Thread.sleep(2000);
+			gmr.AirlineApprove();
+			
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
+			Thread.sleep(8000);
+			
+		}	
+						
+		
+		@Then("^add 2SB details and generate single VT in CB login ACS_GMR_Practice$")
+		public void add_2SB_details_and_generate_single_VT_in_CB_login_ACS_GMR_Practice() throws InterruptedException, AWTException {
+
+			wm.JavascriptExecutorClick(driver, gmr.AllForAirline);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.AllForAirlineOk);Thread.sleep(2000);
+			
+			Actions bondedaction = new Actions(driver);
+			bondedaction.moveToElement(gmr.FFDropdownForAAdyaLogistics).perform();
+			Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.FFCustomBroker);Thread.sleep(2000);
+			
+			
+			wm.JavascriptExecutorClick(driver, gmr.AddSB);Thread.sleep(4000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBNumber);Thread.sleep(4000);
+			gmr.SBNumber.sendKeys("5467891");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDate);Thread.sleep(2000);//18 May 2023
+			wm.JavascriptExecutorClick(driver, gmr.Calendar);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.CalendarDateForQuickASI);Thread.sleep(2000);//----you can put any date
+			 
+			 Thread.sleep(2000);
+			 
+			
+			Select sbtype = new Select(driver.findElement(By.id("drpSBType")));  
+			sbtype.selectByVisibleText("Manual");
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBNoOfPieces);Thread.sleep(2000);
+			gmr.SBNoOfPieces.sendKeys("6");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBGrossWt);Thread.sleep(2000);
+			gmr.SBGrossWt.sendKeys("60");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBVolumetricWt);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionsNoPieces);Thread.sleep(2000);
+			gmr.SBDimensionsNoPieces.sendKeys("6");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionslength);Thread.sleep(2000);
+			gmr.SBDimensionslength.sendKeys("14");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionswidth);Thread.sleep(2000);
+			gmr.SBDimensionswidth.sendKeys("15");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionsHeight);Thread.sleep(2000);
+			gmr.SBDimensionsHeight.sendKeys("30");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionsVolumeCBM);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBDimensionsOkBtn);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.ChargeableGrossWt);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.FOBValue);Thread.sleep(2000);
+			gmr.FOBValue.sendKeys(cm.RandomNo(4));Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.ExporterName);Thread.sleep(2000);
+			gmr.ExporterName.sendKeys("ADVIK");Thread.sleep(2000);
+		
+			wm.JavascriptExecutorClick(driver, gmr.AddShippingBillDetails);Thread.sleep(2000);
+			
+			gmr.AddSB2();
+		    
+			wm.JavascriptExecutorClick(driver, gmr.SBDetailsAadhya);Thread.sleep(4000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBASI);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBASI2ndCheckbox);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBASIProceed);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBASIConfirmation);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.SBASIOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.TSP);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.EdocketMsg);Thread.sleep(2000);
+			
+			gmr.EDocket();
+			
+			gmr.TSP1(); 
+			
+			wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
+			
+		   	
+		    driver.switchTo().frame(0);Thread.sleep(1000);
+		    
+		
+		    wm.JavascriptExecutorClick(driver, gmr.SBNumberInput);Thread.sleep(2000);
+		    gmr.SBNumberInput.sendKeys("5467892");Thread.sleep(2000);
+		    wm.JavascriptExecutorClick(driver, gmr.SBNumberSearchBtn);Thread.sleep(2000);
+		    
+		    wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
+		    
+		    wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.SBDetails);Thread.sleep(4000);//---------kadun takne
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		gmr.VehicleNumber.sendKeys("23456");
+		wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
+		gmr.DriverLicenseNo.sendKeys("MH12-3036");
+		wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
+		gmr.DriverName.sendKeys("Jordhen");
+		wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
+		gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
+		wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
+		gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
+		wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+		
+		gmr.SBDetails1.click();Thread.sleep(2000);
+			
+		gmr.TSP2(); 
+        wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
+			
+		   	
+		 driver.switchTo().frame(0);Thread.sleep(1000);
+		    
+		
+	     wm.JavascriptExecutorClick(driver, gmr.SBNumberInput);Thread.sleep(2000);
+	     gmr.SBNumberInput.sendKeys("5467891");Thread.sleep(2000);
+	     wm.JavascriptExecutorClick(driver, gmr.SBNumberSearchBtn);Thread.sleep(2000);
+	    wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
+	    wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.SBDetails);Thread.sleep(4000);//---------kadun takne
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		gmr.VehicleNumber.sendKeys("23456");
+		wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
+		gmr.DriverLicenseNo.sendKeys("MH12-3036");
+		wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
+		gmr.DriverName.sendKeys("Jordhen");
+		wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
+		gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
+		wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
+		gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
+		wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+		
+		gmr.SBDetails1.click();Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.VehicleToken2);Thread.sleep(2000);
+			
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		gmr.VehicleNumber.sendKeys("23459");Thread.sleep(2000);
+		
+		Thread.sleep(8000);
+		wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+		Thread.sleep(8000);
+		 }*/
+		
+		//TC 13,24,25,27,29
+		
+		/*@Then("To verify user able to create consol AWB in FF login add 1SB ACS_GMR_Practice {string}")
+		public void To_verify_user_able_to_create_consol_AWB_in_FF_login_add_1SB_ACS_GMR_Practice(String mawbno_13) throws InterruptedException, AWTException {
+		
+			gmr.QuickASITab();
+			wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+			gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
+
+			gmr.QuickASIMAWBNo.sendKeys(mawbno_13);
+			Thread.sleep(2000);
+			gmr.QuickASIConsoleForAadhya();
+			Thread.sleep(2000);
+			gmr.AddHAWBForAadhya();
+			gmr.MAWBListInput.click();Thread.sleep(2000);
+			gmr.MAWBListInput.sendKeys(mawbno_13);
+			gmr.MAWBInput();
+			gmr.MAWBASI();	
+			gmr.CO();
+			
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+			Thread.sleep(8000);
+		
+		}
+		
+		@Then("To verify airline login ACS_GMR_Practice {string}")
+		public void To_verify_airline_login_ACS_GMR_Practice(String mawbno_13) throws InterruptedException, AWTException {
+			
 			gmr.Airline();
-			
-			Entity = entity;
-			TestDataReader.ReadLoginDetails(Entity);
-			Thread.sleep(500);
-			System.out.println("usr= " + Username);
-			System.out.println("pwd= " + Password);
-			// loginScreen.isLoginScreenDisplayed();
-			loginScreen.Login(Entity, Username, Password);
-			Thread.sleep(4000);	
-			
-			gmr.AllRadioBtn.click();
+			gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + mawbno_13);
 			Thread.sleep(2000);
-			gmr.GmrHydRadioOKBtn.click();
+			gmr.AirlineApprove();
+			
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+			Thread.sleep(8000);
+			
+		}
+		
+		@Then("and generate multiple VT in CB login or not ACS_GMR_Practice {string}")
+		public void and_generate_multiple_VT_in_CB_login_or_not_ACS_GMR_Practice(String mawbno_13) throws InterruptedException, AWTException {
+		
+			wm.JavascriptExecutorClick(driver, gmr.AllForAirline);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.AllForAirlineOk);Thread.sleep(2000);
+			
+			Actions bondedaction = new Actions(driver);
+			bondedaction.moveToElement(gmr.FFDropdownForAAdyaLogistics).perform();
 			Thread.sleep(2000);
-			
-			Actions action = new Actions(driver);
-			action.moveToElement(gmr.BusinessLoginFF).perform();
-			Thread.sleep(1000);
-			
-			gmr.CustomBrokerInAadhya.click();
-			
-			//Select aadhyacustombroker = new Select(driver.findElement(By.id("ctl00_rptOrganizationTypeList_ctl00_lnkOrganizationTypeName")));  
-			//aadhyacustombroker.selectByVisibleText("Customs Broker");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.FFCustomBroker);Thread.sleep(2000);
+			//gmr.MAWBListInput.sendKeys(mawbno_13);
+			//Thread.sleep(2000);
+			//gmr.MAWBInput();
 			
 			gmr.AddSB();
 			gmr.SBDetails();
 			gmr.EDocket();
-			wm.JavascriptExecutorClick(driver, gmr.SBDetailsAadhya);Thread.sleep(4000);
 			gmr.TSP();
-			gmr.VehicleToken();
-			wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrow);Thread.sleep(2000);
 			
-			wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);Thread.sleep(2000);
-			
-			}*/
-		
-
-		//Tc 3
-		/*@Then("^To verify user able to create 2 different direct AWB in ACS_GMR Negative and Practice$")
-		public void To_verify_user_able_to_create_2_different_direct_AWB_in_ACS_GMR_Negative_and_Practice() throws InterruptedException, AWTException{ 
-	
-			gmr.QuickASIForAdvik();
-			//gmr.QuickASITab();;
-			//gmr.QuickASIForAadhya();
-			gmr.MAWBInput();
-			gmr.MAWBASI();
-			gmr.CO();
-			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-			Thread.sleep(8000);
-		}
-		
-		@Then("^To verify user can fill all the airline details ACS_GMR Negative and Practice$")
-		public void To_verify_user_can_fill_all_the_airline_details_ACS_GMR_Negative_and_Practice() throws InterruptedException{
-			
-			gmr.Airline();
-
-}
-			@Then("^Able to generate single VT for 2 different AWB or not ACS_GMR Negative and Practice$")
-			public void able_to_generate_single_VT_for_2_different_AWB_or_not_ACS_GMR_Negative_and_Practice() throws InterruptedException, AWTException{ 
-			gmr.MAWBInput();
-			gmr.AddSB();
-		   	gmr.SBDetails();
-		   	gmr.EDocket();
-		   	gmr.TSP();Thread.sleep(2000);
-		   	//gmr.VehicleToken.click();Thread.sleep(2000);
-		   	wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
-		   	//gmr.AddShipment.click();Thread.sleep(2000);
-		   	driver.switchTo().frame(0);Thread.sleep(1000);
-		   	wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
-		   	//gmr.SBCheckBox.click();Thread.sleep(2000);
-		   	wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox);Thread.sleep(2000);
-		   //	gmr.AddBtnSBCheckBox.click();Thread.sleep(2000);
-		   	wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
 			gmr.VehicleNumber.sendKeys("23456");
 			wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
@@ -188,87 +336,174 @@ public class ACS_GMR_Negative_Practice {
 			gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
 			wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
 			gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
+			
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenAddBtn);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.VehicleNumber2);Thread.sleep(2000);
+			gmr.VehicleNumber2.sendKeys("23458");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo2);Thread.sleep(2000);
+			gmr.DriverLicenseNo2.sendKeys("64572365");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.DriverName2);Thread.sleep(2000);
+			gmr.DriverName2.sendKeys("Ajeet");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.DriverMobNo2);Thread.sleep(2000);
+			gmr.DriverMobNo2.sendKeys(cm.RandomNo(10));Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.AgentMobNo2);Thread.sleep(2000);
+			gmr.AgentMobNo2.sendKeys(cm.RandomNo(10));Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VTNOP2);Thread.sleep(2000);
+			gmr.VTNOP2.sendKeys("12");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VTGrossWT2);Thread.sleep(2000);
+			gmr.VTGrossWT2.sendKeys("120");Thread.sleep(2000);
+			
 			wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000); 
-		   	
-			gmr.AdvikLogout();Thread.sleep(1000);
-		}*/
-			//TC 4
-			@Then("^To verify user able to create Direct AWB and generate multiple VT ACS_GMR Negative and Practice$")
-			public void To_verify_user_able_to_create_Direct_AWB_and_generate_multiple_VT_ACS_GMR_Negative_and_Practice() throws InterruptedException, AWTException{ 
-				
-				wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
-				gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
-				gmr.QuickASIMAWBNo.sendKeys(AWB_ACSGMR_04);
-				Thread.sleep(2000);
-				gmr.QuickASIForAdvik();
-				gmr.MAWBListInput.sendKeys(AWB_ACSGMR_04);
-				Thread.sleep(2000);
-				gmr.MAWBInput();
-				gmr.MAWBASI();
-				gmr.CO();
-				wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-				Thread.sleep(8000);
-				
-			}@Then("^To verify user can fill all the airline details ACS_GMR Negative and Practice$")
-			public void To_verify_user_can_fill_all_the_airline_details_ACS_GMR_Negative_and_Practice() throws InterruptedException{
-				
-				gmr.Airline();
-				gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + AWB_ACSGMR_04);
-				Thread.sleep(2000);
-				gmr.AirlineApprove();
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
 			
-			
-	}
-			@Then("^for single Shipping bill or not ACS_GMR Negative and Practice$")
-			public void for_single_Shipping_bill_or_not_ACS_GMR_Negative_and_Practice() throws InterruptedException, AWTException{ 
-				gmr.MAWBListInput.sendKeys(AWB_ACSGMR_04);
-				Thread.sleep(2000);  
-				gmr.MAWBInput();
-				gmr.AddSB();
-			   	gmr.SBDetails();
-			   	gmr.EDocket();
-			   	gmr.TSP();Thread.sleep(2000);
-			   	
-			   	
-				wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
-				gmr.VehicleNumber.sendKeys("23456");
-				wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
-				gmr.DriverLicenseNo.sendKeys("MH12-3036");
-				wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
-				gmr.DriverName.sendKeys("Jordhen");
-				wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
-				gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
-				wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
-				gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
-				
-				gmr.VTNoP.clear();Thread.sleep(1000);
-				wm.JavascriptExecutorClick(driver, gmr.VTNoP);Thread.sleep(2000);
-				gmr.VTNoP.sendKeys("6");Thread.sleep(2000);
-				gmr.VehicleTokenAddBtn.click();Thread.sleep(2000);
-				
-				//------2nd VT------------------------
-				
-				wm.JavascriptExecutorClick(driver, gmr.VehicleTokenAddBtn);Thread.sleep(2000);
-				  
-				gmr.VehicleNumber2Row.click();Thread.sleep(2000);gmr.VehicleNumber.click();Thread.sleep(2000);
-				gmr.VehicleNumber2Row.sendKeys("23456");Thread.sleep(2000);
-				wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
-				gmr.DriverLicenseNo.sendKeys("MH12-3036");
-				wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
-				gmr.DriverName.sendKeys("Jordhen");
-				wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
-				gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
-				wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
-				gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
-				gmr.VTNoP.clear();Thread.sleep(1000);
-				wm.JavascriptExecutorClick(driver, gmr.VTNoP);Thread.sleep(2000);
-				gmr.VTNoP.sendKeys("6");Thread.sleep(2000);
-				wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
-				wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000); 
-			   	
-				gmr.AdvikLogout();Thread.sleep(1000);
-				
-			}
+			verify = wm.isElementPresent(driver, gmr.Delete);Thread.sleep(2000);
+            CommonMethods.Verify1(verify, true);Thread.sleep(2000);
 		
-}
+		}*/
+		
+		/*@Then("To verify whether the user is able to rejection of CO till TSP process from airline login ACS_GMR_Practice {string}")
+		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+			Thread.sleep(8000);
+		
+		}*/
+		
+		@Then("To verify whether the user is able to rejection of CO from airline login ACS_GMR_Practice {string}")
+		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+			gmr.QuickASITab();
+			wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+			gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
+
+			gmr.QuickASIMAWBNo.sendKeys(mawbno_39);
+			Thread.sleep(2000);
+			gmr.QuickASIForAdvik();
+			Thread.sleep(2000);
+			gmr.MAWBListInput.click();Thread.sleep(2000);
+			gmr.MAWBListInput.sendKeys(mawbno_39);
+			gmr.MAWBInput();
+			gmr.MAWBASI();	
+			gmr.CO();
+			
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+			Thread.sleep(8000);
+		
+		}
+		
+		@Then("To verify rejection of airline login ACS_GMR_Practice {string}")
+		public void To_verify_rejection_of_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+			
+			gmr.Airline();
+			gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + mawbno_39);
+			Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.CartingOrderShipmentMAWBNoSearchBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.Action);Thread.sleep(4000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.Reject);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.RejectionReason);Thread.sleep(2000);
+			gmr.RejectionReason.sendKeys("want to another flight");Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.RejectionReasonSubmit);Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.RejectedOk);Thread.sleep(4000);
+			
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+
+			Thread.sleep(8000);
+			
+			
+			
+		}
+		
+		@Then("To verify whether the user is able to rejection of CO ACS_GMR_Practice {string}")
+		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+			gmr.AllRaadioBtn();Thread.sleep(1000);
+			gmr.MAWBListInput.click();Thread.sleep(2000);
+			gmr.MAWBListInput.sendKeys(mawbno_39);
+			gmr.MAWBInput();
+			wm.JavascriptExecutorClick(driver, gmr.CO);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.COYesBtn);Thread.sleep(1000);
+			wm.JavascriptExecutorClick(driver, gmr.COOkBtn);Thread.sleep(1000);
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+			Thread.sleep(8000);
+			
+			
+			
+		}
+		
+		@Then("till TSP process from airline login ACS_GMR_Practice {string}")
+		public void till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+			gmr.Airline();
+			
+			gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + mawbno_39);
+			Thread.sleep(2000);
+			gmr.AirlineApprove();
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+			Thread.sleep(8000);
+			
+			
+		}
+		
+		@Then("TSP process from airline login ACS_GMR_Practice {string}")
+		public void TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+			gmr.AllRaadioBtn();Thread.sleep(1000);
+			gmr.MAWBListInput.click();Thread.sleep(2000);
+			gmr.MAWBListInput.sendKeys(mawbno_39);
+			gmr.MAWBInput();
+			gmr.AddSB();
+			gmr.SBDetails();
+			gmr.EDocket();
+			gmr.TSP();
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.TSPMilestone);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.UsedTSP);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.TSPPrint);Thread.sleep(2000);
+			
+			Set<String> allwindowid = driver.getWindowHandles();
+		    Object[] windows = allwindowid.toArray();
+		    String window2 = windows[0].toString();        
+		    driver.switchTo().window(window2); 
+		    System.out.println(allwindowid);
+		    System.out.println(window2);
+		    Thread.sleep(5000);
+		    
+		    String window1 = windows[0].toString();
+		    driver.switchTo().window(window1);
+		    System.out.println(window1);
+		    Thread.sleep(5000);
+		    
+		    wm.JavascriptExecutorClick(driver, gmr.TSPPaymentClose);Thread.sleep(4000);
+			
+		}
+		
+		@Then("To verify whether the user is able to  rejection of CO from Airline login or not for those AWB TSP already process ACS_GMR_Practice ACS_GMR_Practice {string}")
+		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_from_Airline_login_or_not_for_those_AWB_TSP_already_process_ACS_GMR_Practice_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+            gmr.Airline();
+			
+			gmr.CartingOrderShipmentMAWBNo.sendKeys("999" + mawbno_39);
+			Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.CartingOrderShipmentMAWBNoSearchBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.Action);Thread.sleep(4000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.AirlineFlightNo);Thread.sleep(4000);
+			gmr.AirlineFlightNo.clear();Thread.sleep(2000);
+			gmr.AirlineFlightNo.sendKeys("5678");Thread.sleep(2000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.Approve);Thread.sleep(4000);
+			
+			wm.JavascriptExecutorClick(driver, gmr.ApproveOk);Thread.sleep(4000);
+		}
+		}

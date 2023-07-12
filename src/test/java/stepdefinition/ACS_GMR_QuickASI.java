@@ -636,7 +636,7 @@ public class ACS_GMR_QuickASI {
 				
 				
 				Select cargotypes = new Select(driver.findElement(By.id("ctl00_hldPage_ddlTypeTxt")));  
-				cargotypes.selectByVisibleText("General Cargo"); Thread.sleep(2000); 
+				cargotypes.selectByVisibleText("Human Remains"); Thread.sleep(2000); 
 				
 				WebElement comname = driver.findElement(By.id("ctl00_hldPage_ddlComodityTypeName"));
 			      Actions ct1 = new Actions(driver);
@@ -647,8 +647,8 @@ public class ACS_GMR_QuickASI {
 			      Robot robot=new Robot();
 			       robot.keyPress(KeyEvent.VK_DOWN);
 			       robot.keyPress(KeyEvent.VK_ENTER);
-			       robot.keyRelease(KeyEvent.VK_DOWN);
-			       robot.keyRelease(KeyEvent.VK_ENTER);
+			      // robot.keyRelease(KeyEvent.VK_DOWN);
+			       //robot.keyRelease(KeyEvent.VK_ENTER);
 			     
 			      Thread.sleep(2000);
 			      
@@ -874,15 +874,15 @@ public class ACS_GMR_QuickASI {
 				@Then("^To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI Direct NonBonded$")
 				public void To_verify_whether_the_user_is_able_to_submit_the_SB_ASI_details_ACS_GMR_QuickASI_Direct_NonBonded() throws InterruptedException, AWTException {
 			
-					gmr.MAWBListInput.click();Thread.sleep(2000);
-					gmr.MAWBListInput.sendKeys(AWB_QUICKASI_DIRECT_NONBONDED);
-					Thread.sleep(2000);
+				gmr.MAWBListInput.click();Thread.sleep(2000);
+				gmr.MAWBListInput.sendKeys(AWB_QUICKASI_DIRECT_NONBONDED);
+				Thread.sleep(2000);
 					
-					gmr.MAWBListInputDownArrow.click();Thread.sleep(2000);
+				gmr.MAWBListInputDownArrow.click();Thread.sleep(2000);
 					
-					gmr.Contains.click();Thread.sleep(4000);
+				gmr.Contains.click();Thread.sleep(4000);
 					
-					wm.JavascriptExecutorClick(driver, gmr.AddSB);Thread.sleep(4000);
+				wm.JavascriptExecutorClick(driver, gmr.AddSB);Thread.sleep(4000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.SBNumber);Thread.sleep(4000);
 				gmr.SBNumber.sendKeys("5467891");Thread.sleep(2000);
@@ -891,7 +891,7 @@ public class ACS_GMR_QuickASI {
 				wm.JavascriptExecutorClick(driver, gmr.Calendar);Thread.sleep(2000);
 				wm.JavascriptExecutorClick(driver, gmr.CalendarDateForQuickASI);Thread.sleep(2000);//----you can put any date
 				 
-				 Thread.sleep(2000);
+				Thread.sleep(2000);
 				 
 				
 				Select sbtype = new Select(driver.findElement(By.id("drpSBType")));  
@@ -1349,7 +1349,7 @@ public class ACS_GMR_QuickASI {
 							
 							
 							Select cargotypes = new Select(driver.findElement(By.id("ctl00_hldPage_ddlTypeTxt")));  
-							cargotypes.selectByVisibleText("General Cargo"); Thread.sleep(2000); 
+							cargotypes.selectByVisibleText("Human Remains"); Thread.sleep(2000); 
 							
 							WebElement comname = driver.findElement(By.id("ctl00_hldPage_ddlComodityTypeName"));
 						      Actions ct1 = new Actions(driver);
@@ -1360,8 +1360,8 @@ public class ACS_GMR_QuickASI {
 						      Robot robot=new Robot();
 						       robot.keyPress(KeyEvent.VK_DOWN);
 						       robot.keyPress(KeyEvent.VK_ENTER);
-						       robot.keyRelease(KeyEvent.VK_DOWN);
-						       robot.keyRelease(KeyEvent.VK_ENTER);
+						       //robot.keyRelease(KeyEvent.VK_DOWN);
+						       //robot.keyRelease(KeyEvent.VK_ENTER);
 						     
 						      Thread.sleep(2000);
 						      

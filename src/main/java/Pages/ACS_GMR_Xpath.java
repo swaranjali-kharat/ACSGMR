@@ -335,7 +335,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtflightno1']")
 	public WebElement QuickASIFlightNo;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/div[1]")
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/span")
 	public WebElement QuickASIAssignCHA;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_mltSlctCHA_3']")
@@ -344,7 +344,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_mltSlctCHA_1']")
 	public WebElement QuickASIAssignCHAAdhyaLogistics;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/div[2]/span")
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/div[2]/span")
 	public WebElement QuickASIAssignCHA1;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveAwb']")
@@ -483,8 +483,24 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_AirLineHome_ctl02_imgAction']")
 	public WebElement Action;
 	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtFlightNo']")
+	public WebElement AirlineFlightNo;
+	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSubmit']")
 	public WebElement Approve;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnReject']")
+	public WebElement Reject;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtReason']")
+	public WebElement RejectionReason;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnResSave']")
+	public WebElement RejectionReasonSubmit;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_Button1']")
+	public WebElement RejectedOk;
+	
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_Button1']")
 	public WebElement ApproveOk;
@@ -558,6 +574,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/table/tbody/tr[2]/td[15]/input")
 	public WebElement SBDetails;
 	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/div/table/tbody/tr[2]/td[16]/input")
+	public WebElement SBDetails1;
+	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgASISBStatus']")
 	public WebElement SBASI;
 	
@@ -602,6 +621,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_rptCSDUploadedDocument_ctl01_chkRecord']")
 	public WebElement RecordSelectionCheckbox;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_rptCSDUploadedDocument_ctl02_chkRecord']")
+	public WebElement RecordSelectionCheckbox2;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[2]/div/div[2]/div[6]/div[10]/div/div/div[3]/input")
 	public WebElement DocSelectedOkBtn;
@@ -1108,7 +1130,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_LinkButton6']")
 	public WebElement AdvikHydrabadLogOut;
 	
-	@FindBy(xpath = "/html/body/div[7]/table/tbody/tr[1]/td[5]/a")
+	@FindBy(xpath = "/html/body/div[7]/table/tbody/tr[1]/td[7]")
 	public WebElement CalendarDateForQuickASI;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgASISBStatus']")
@@ -1163,6 +1185,12 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnAssign']")
 	public WebElement AddBtnSBCheckBox;
 	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBWiseShipments_ctl03_chkRecord']")
+	public WebElement AddBtnSBCheckBox1;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBWiseShipments_ctl05_chkRecord']")
+	public WebElement AddBtnSBCheckBox2;
+	
 	@FindBy(xpath = "/html/body/form/div[4]/div[1]/div[3]/div/div[2]/div")
 	public WebElement AdvikHydrabadDownArrowBtn;
 	
@@ -1175,9 +1203,107 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='txtNOP']")
 	public WebElement VTNoP;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[8]/div/div/div/div[3]/div/table/tbody/tr[1]/td[2]/input")
-	public WebElement VehicleNumber2Row;
+	@FindBy(xpath = "(//*[@id='txtVehNo'])[2]")
+	public WebElement VehicleNumber2;
 	
+	@FindBy(xpath = "(//*[@id='txtDriverLicNo'])[2]")
+	public WebElement DriverLicenseNo2;
+	
+	@FindBy(xpath = "(//*[@id='txtDriverName'])[2]")
+	public WebElement DriverName2;
+	
+	@FindBy(xpath = "(//*[@id='txtDriverMobNo'])[2]")
+	public WebElement DriverMobNo2;
+	
+	@FindBy(xpath = "(//*[@id='txtAgentMobNo'])[2]")
+	public WebElement AgentMobNo2;
+	
+	@FindBy(xpath = "(//*[@id='txtNOP'])[2]")
+	public WebElement VTNOP2;
+	
+	@FindBy(xpath = "(//*[@id='txtGrossWt'])[2]")
+	public WebElement VTGrossWT2;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[1]/div[2]/div/ul/li[6]/a/span")
+	public WebElement FFDropdownForAAdyaLogistics;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[1]/div[2]/div/ul/li[6]/ul/li[1]/a")
+	public WebElement FFCustomBroker;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tfoot/tr/td[12]/img")
+	public WebElement AddShippingBillDetails;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[2]/td[1]/input[1]")
+	public WebElement AddSBNumber;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[2]/td[2]/img")
+	public WebElement AddCalendar;
+	
+	@FindBy(xpath = "/html/body/div[7]/table/tbody/tr[1]/td[7]/a")
+	public WebElement AddCalendarDateForQuickASI;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[2]/td[5]/input[1]")
+	public WebElement AddSBNoOfPieces;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[2]/td[6]/input")
+	public WebElement AddSBGrossWt;
+	
+	@FindBy(xpath = "//*[@class='txtbox40 clsRequired cls_sbtype sbtype_2']")
+	public WebElement AddSBType;
+	
+	@FindBy(xpath = "(//*[@id='drpSBType'])[2]")
+	public WebElement AddSBTypeManual;
+	
+	@FindBy(xpath = "//*[@id='addDimensions_2']")
+	public WebElement AddSBVolumetricWt;
+	
+	@FindBy(xpath = "(//*[@id='txtFOBValue'])[2]")
+	public WebElement AddFOBValue;
+	
+	@FindBy(xpath = "(//*[@id='txtExporterName'])[2]")
+	public WebElement AddExporterName;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_gridASIMawb_ctl03_chkSB'])")
+	public WebElement SBASI2ndCheckbox;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgSBTSP'])")
+	public WebElement TSP1;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl03_imgSBTSP'])")
+	public WebElement TSP2;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_txtSBNos'])")
+	public WebElement SBNumberInput; 
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnSearch'])")
+	public WebElement SBNumberSearchBtn;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnSearch'])")
+	public WebElement VehicleTokenForAddShipments2;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl03_lnkVTNo'])")
+	public WebElement VehicleToken2;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdMAWB_ctl02_HplADDHAWB'])")
+	public WebElement AddHAWBMilestone;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdMAWB_ctl02_lnkAWBDeleteAWB'])")
+	public WebElement Delete;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdMAWB_ctl02_hreApprovedCO'])")
+	public WebElement CO2;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnCancelAwb'])")
+	public WebElement VehicleTokenBackBtn;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl02_lnkSBTSPAmount'])")
+	public WebElement UsedTSP;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_ibtnPrint'])")
+	public WebElement TSPPrint;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[5]/div/div/div/div[1]/button/span")
+	public WebElement TSPPaymentClose;
 	//----------------code----------------------------------------------------------
 	
 	public void QuickASITab() throws InterruptedException{
@@ -1192,9 +1318,6 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	public void CO() throws InterruptedException {
 		
           wm.JavascriptExecutorClick(driver, gmr.CO);Thread.sleep(1000);
-		
-		//Select airlineselectionQuickASI = new Select(driver.findElement(By.id("ctl00_hldPage_drpAirlineList")));  
-		//airlineselectionQuickASI.selectByVisibleText("AADHYA BONDED TRUCKER");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.COYesBtn);Thread.sleep(1000);
 		
@@ -1262,6 +1385,60 @@ public void AddSB() throws InterruptedException {
 	
 	wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
 	}
+
+public void AddSB2() throws InterruptedException {
+	
+	wm.JavascriptExecutorClick(driver, gmr.AddSBNumber);Thread.sleep(4000);
+	gmr.AddSBNumber.sendKeys("5467892");Thread.sleep(2000);
+	
+	//wm.JavascriptExecutorClick(driver, gmr.AddSBDate);Thread.sleep(2000);//18 May 2023
+	wm.JavascriptExecutorClick(driver, gmr.AddCalendar);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.AddCalendarDateForQuickASI);Thread.sleep(3000);
+	
+	
+	Select SelectSBTypeManual2 = new Select(gmr.AddSBTypeManual);Thread.sleep(500);
+
+	SelectSBTypeManual2.selectByVisibleText("Manual");Thread.sleep(500);
+	
+	//wm.JavascriptExecutorClick(driver, gmr.AddSBTypeManual);Thread.sleep(2000);
+	
+	gmr.AddSBNoOfPieces.click();Thread.sleep(2000);
+	gmr.AddSBNoOfPieces.sendKeys("6");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.AddSBGrossWt);Thread.sleep(2000);
+	gmr.AddSBGrossWt.sendKeys("60");Thread.sleep(2000);
+	
+    wm.JavascriptExecutorClick(driver, gmr.AddSBVolumetricWt);Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionsNoPieces);Thread.sleep(2000);
+	gmr.SBDimensionsNoPieces.sendKeys("6");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionslength);Thread.sleep(2000);
+	gmr.SBDimensionslength.sendKeys("14");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionswidth);Thread.sleep(2000);
+	gmr.SBDimensionswidth.sendKeys("15");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionsHeight);Thread.sleep(2000);
+	gmr.SBDimensionsHeight.sendKeys("30");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionsVolumeCBM);Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBDimensionsOkBtn);Thread.sleep(2000);
+	
+   wm.JavascriptExecutorClick(driver, gmr.ChargeableGrossWt);Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.AddFOBValue);Thread.sleep(2000);
+	gmr.AddFOBValue.sendKeys(cm.RandomNo(4));Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.AddExporterName);Thread.sleep(2000);
+	gmr.AddExporterName.sendKeys("ADVIK");Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
+	
+	wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+	
+}
 	
    public void SBDetails() throws InterruptedException {
 	
@@ -1307,9 +1484,34 @@ public void AddSB() throws InterruptedException {
 //		uploaddoc.keyPress(KeyEvent.VK_ENTER);
 		uploaddoc.delay(1000);
 		
+		//2nd doc
+		
+		WebElement iconn = driver.findElement(By.id("ctl00_hldPage_fuctlUploadDocs"));
+	      Actions obb = new Actions(driver);
+	      obb.click(iconn);
+	      Action actionn  = obb.build();
+	      actionn.perform();
+		
+		Robot uploaddoc1 = new Robot();
+		uploaddoc1.delay(2000);
+
+		StringSelection ss = new StringSelection("E:\\dummy1 documents\\pdf1.pdf");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+
+		uploaddoc1.keyPress(KeyEvent.VK_CONTROL);
+		uploaddoc1.keyPress(KeyEvent.VK_V);
+		uploaddoc1.delay(2000);
+
+		uploaddoc1.keyPress(KeyEvent.VK_ENTER);
+//		uploaddoc.keyPress(KeyEvent.VK_ENTER);
+		uploaddoc1.delay(1000);
+		
+		
+		
 		wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_UpoadBtn);Thread.sleep(2000);	
 		
 		wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox2);Thread.sleep(2000);
 		
 
 		wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_Submit);Thread.sleep(2000);
@@ -1321,14 +1523,14 @@ public void AddSB() throws InterruptedException {
    }
    
    public void TSP() throws InterruptedException, AWTException{
-	   
-	   gmr.SBDetails.click();Thread.sleep(2000);
+	   gmr.TSPMilestone.click();Thread.sleep(2000);
+	   //gmr.SBDetails.click();Thread.sleep(2000);
 	   gmr.TSP.click();Thread.sleep(2000);
 	   
 	   
 	  
 	   Select cargotypes = new Select(driver.findElement(By.id("ctl00_hldPage_ddlTypeTxt")));  
-		cargotypes.selectByVisibleText("General Cargo"); Thread.sleep(2000); 
+		cargotypes.selectByVisibleText("Human Remains"); Thread.sleep(2000); 
 		
 		WebElement comname = driver.findElement(By.id("ctl00_hldPage_ddlComodityTypeName"));
 	      Actions ct1 = new Actions(driver);
@@ -1339,8 +1541,8 @@ public void AddSB() throws InterruptedException {
 	      Robot robot=new Robot();
 	       robot.keyPress(KeyEvent.VK_DOWN);
 	       robot.keyPress(KeyEvent.VK_ENTER);
-	       robot.keyRelease(KeyEvent.VK_DOWN);
-	       robot.keyRelease(KeyEvent.VK_ENTER);
+	       //robot.keyRelease(KeyEvent.VK_DOWN);
+	       //robot.keyRelease(KeyEvent.VK_ENTER);
 	     
 	      Thread.sleep(2000);
 	      
@@ -1348,12 +1550,87 @@ public void AddSB() throws InterruptedException {
 	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
-		gmr.TransactionPaswrd.sendKeys("12345678");Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
 		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
 		wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
    }
+   
+   //TSP1
+   
+public void TSP1() throws InterruptedException, AWTException{
+	   
+	   gmr.SBDetails1.click();Thread.sleep(2000);
+	   gmr.TSP1.click();Thread.sleep(2000);
+	   
+	   
+	  
+	   Select cargotypes = new Select(driver.findElement(By.id("ctl00_hldPage_ddlTypeTxt")));  
+		cargotypes.selectByVisibleText("Human Remains"); Thread.sleep(2000); 
+		
+		WebElement comname = driver.findElement(By.id("ctl00_hldPage_ddlComodityTypeName"));
+	      Actions ct1 = new Actions(driver);
+	      ct1.click(comname);
+	      Action comnameaction  = ct1.build();
+	      comnameaction.perform();Thread.sleep(5000);  
+	      
+	      Robot robot=new Robot();
+	       robot.keyPress(KeyEvent.VK_DOWN);
+	       robot.keyPress(KeyEvent.VK_ENTER);
+	       //robot.keyRelease(KeyEvent.VK_DOWN);
+	       //robot.keyRelease(KeyEvent.VK_ENTER);
+	     
+	      Thread.sleep(2000);
+	      
+		
+	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
+   }
+
+
+//TSP2
+public void TSP2() throws InterruptedException, AWTException{
+	   
+	   gmr.SBDetails.click();Thread.sleep(2000);
+	   gmr.TSP2.click();Thread.sleep(2000);
+	   
+	   
+	  
+	   Select cargotypes = new Select(driver.findElement(By.id("ctl00_hldPage_ddlTypeTxt")));  
+		cargotypes.selectByVisibleText("Human Remains"); Thread.sleep(2000); 
+		
+		WebElement comname = driver.findElement(By.id("ctl00_hldPage_ddlComodityTypeName"));
+	      Actions ct1 = new Actions(driver);
+	      ct1.click(comname);
+	      Action comnameaction  = ct1.build();
+	      comnameaction.perform();Thread.sleep(5000);  
+	      
+	      Robot robot=new Robot();
+	       robot.keyPress(KeyEvent.VK_DOWN);
+	       robot.keyPress(KeyEvent.VK_ENTER);
+	       //robot.keyRelease(KeyEvent.VK_DOWN);
+	       //robot.keyRelease(KeyEvent.VK_ENTER);
+	     
+	      Thread.sleep(2000);
+	      
+		
+	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
+}
+   
    
    public void VehicleToken() throws InterruptedException{
 	   
@@ -1372,6 +1649,63 @@ public void AddSB() throws InterruptedException {
 		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);  
    
    }
+   
+public void VehicleTokenForAddShipments() throws InterruptedException{
+	   
+	wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
+	
+   	
+	    driver.switchTo().frame(0);Thread.sleep(1000);
+	    wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
+	
+	    wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox1);Thread.sleep(2000);
+	//wm.JavascriptExecutorClick(driver, gmr.SBDetails);Thread.sleep(4000);//---------kadun takne
+	//wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+	gmr.VehicleNumber.sendKeys("23456");
+	wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
+	gmr.DriverLicenseNo.sendKeys("MH12-3036");
+	wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
+	gmr.DriverName.sendKeys("Jordhen");
+	wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
+	gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
+	wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
+	gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
+	wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+ 
+   
+   }
+//VT2
+
+public void VehicleTokenForAddShipments2() throws InterruptedException{
+	   
+	wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
+   	
+	    driver.switchTo().frame(0);Thread.sleep(1000);
+	    wm.JavascriptExecutorClick(driver, gmr.SBCheckBox);Thread.sleep(2000);
+	
+	    wm.JavascriptExecutorClick(driver, gmr.AddBtnSBCheckBox1);Thread.sleep(2000);
+	//wm.JavascriptExecutorClick(driver, gmr.SBDetails);Thread.sleep(4000);//---------kadun takne
+	//wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+	gmr.VehicleNumber.sendKeys("23456");
+	wm.JavascriptExecutorClick(driver, gmr.DriverLicenseNo);Thread.sleep(2000);
+	gmr.DriverLicenseNo.sendKeys("MH12-3036");
+	wm.JavascriptExecutorClick(driver, gmr.DriverName);Thread.sleep(2000);
+	gmr.DriverName.sendKeys("Jordhen");
+	wm.JavascriptExecutorClick(driver, gmr.DriverMobileNo);Thread.sleep(2000);
+	gmr.DriverMobileNo.sendKeys(cm.RandomNo(10));
+	wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
+	gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
+	wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
+	wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+ 
+   
+   }
+
    
    public void ConsAWBList() throws InterruptedException{
 	   
@@ -1425,11 +1759,11 @@ public void AddSB() throws InterruptedException {
 		Select shipmenttypequickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlShipmentType")));  
 		shipmenttypequickASI.selectByVisibleText("Non-Bonded");Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
-		gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+		//gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
 		
-		gmr.QuickASIMAWBNo.sendKeys(TestDataReader.AWBNo_Direct_Practice());
-		Thread.sleep(2000);
+		//gmr.QuickASIMAWBNo.sendKeys(TestDataReader.AWBNo_Direct_Practice());
+		//Thread.sleep(2000);
 		
 		WebElement icon = driver.findElement(By.id("ctl00_hldPage_txtDestAirport"));
 	    Actions ob = new Actions(driver);
@@ -1447,7 +1781,7 @@ public void AddSB() throws InterruptedException {
 		gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-		gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+		gmr.QuickASIChargeableWt.sendKeys("50");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -1464,13 +1798,12 @@ public void AddSB() throws InterruptedException {
    
    }
    
-   //
-public void QuickASIForAdvik() throws InterruptedException{
+public void QuickASIConsoleForAadhya() throws InterruptedException{
 	   
 	   Select ctoforquickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlCustodianName")));  
 		ctoforquickASI.selectByVisibleText("Kale_GHA1");Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIDirectRadioBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIConsoleRadioBtn);Thread.sleep(2000);
 		
 		
 		Select shipmenttypequickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlShipmentType")));  
@@ -1498,7 +1831,61 @@ public void QuickASIForAdvik() throws InterruptedException{
 		gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-		gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+		gmr.QuickASIChargeableWt.sendKeys("150");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
+		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.AAdhyaLogistics);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHAAdhyaLogistics);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA1);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASISave);Thread.sleep(2000);
+	
+		wm.JavascriptExecutorClick(driver, gmr.QuickASISuccessMsg);Thread.sleep(2000);
+   
+   }
+   
+   
+   
+   
+   //
+public void QuickASIForAdvik() throws InterruptedException{
+	   
+	   Select ctoforquickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlCustodianName")));  
+		ctoforquickASI.selectByVisibleText("Kale_GHA1");Thread.sleep(2000);
+		
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIDirectRadioBtn);Thread.sleep(2000);
+		
+		
+		//Select shipmenttypequickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlShipmentType")));  
+		//shipmenttypequickASI.selectByVisibleText("Non-Bonded");Thread.sleep(2000);
+		
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+		//gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
+		
+		//gmr.QuickASIMAWBNo.sendKeys(TestDataReader.AWBNo_Direct_Practice());
+		//Thread.sleep(2000);
+		
+		WebElement icon = driver.findElement(By.id("ctl00_hldPage_txtDestAirport"));
+	    Actions ob = new Actions(driver);
+	    ob.click(icon);
+	    Action destaction  = ob.build();
+	    destaction.perform();Thread.sleep(1000);
+		
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIDestination);Thread.sleep(2000);
+		gmr.QuickASIDestination.sendKeys("LHR");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASINoP);Thread.sleep(2000);
+		gmr.QuickASINoP.sendKeys("12");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIGrossWt);Thread.sleep(2000);
+		gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
+		gmr.QuickASIChargeableWt.sendKeys("150");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -1566,6 +1953,7 @@ public void QuickASIForAdvik() throws InterruptedException{
 		//Thread.sleep(2000);//-------------AWB--------
 		
 		public void AirlineApprove() throws InterruptedException {
+			
 		wm.JavascriptExecutorClick(driver, gmr.CartingOrderShipmentMAWBNoSearchBtn);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.Action);Thread.sleep(4000);
@@ -1589,6 +1977,34 @@ public void QuickASIForAdvik() throws InterruptedException{
 		Thread.sleep(2000);
    
    }
+   
+   public void AddHAWBForAadhya() throws InterruptedException {
+	     
+	   wm.JavascriptExecutorClick(driver, gmr.AddHAWBQuickASI);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.HAWBNoQuickASI);Thread.sleep(2000);
+		gmr.HAWBNoQuickASI.sendKeys("h1");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.OriginAddHAWBQuickASI);Thread.sleep(2000);
+		gmr.OriginAddHAWBQuickASI.sendKeys("hyd");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.DestAddHAWBQuickASI);Thread.sleep(2000);
+		gmr.DestAddHAWBQuickASI.sendKeys("lhr");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.NoPAddHAWBQuickASI);Thread.sleep(2000);
+		gmr.NoPAddHAWBQuickASI.sendKeys("6");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.GrossWtAddHAWBQuickASI);Thread.sleep(2000);
+		gmr.GrossWtAddHAWBQuickASI.sendKeys("60");Thread.sleep(2000);
+		
+		Select assignCHAaddhawbquickASI = new Select(driver.findElement(By.id("ctl00_hldPage_rptHouse_ctl01_mltSlctCHAForHAWB")));  
+		assignCHAaddhawbquickASI.selectByVisibleText("AADHYA LOGISTICS");Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.SaveHAWBAddBtnQuickASI);Thread.sleep(2000);
+		
+		
+		wm.JavascriptExecutorClick(driver, gmr.SavePopupHAWBAddBtnQuickASI);Thread.sleep(2000);
+   }
    public void AdvikLogout() throws InterruptedException {
 	     
 	   gmr.AdvikHydrabadDownArrowBtn.click();
@@ -1598,7 +2014,11 @@ public void QuickASIForAdvik() throws InterruptedException{
 		Thread.sleep(2000);
    
    }
-   
+   public void AirlineLogout() throws InterruptedException {
+	   
+   wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrowQuickASI);Thread.sleep(2000);
+   wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutQuickASI);Thread.sleep(2000);
+   }
 }
    
 
