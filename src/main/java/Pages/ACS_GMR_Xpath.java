@@ -580,6 +580,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgASISBStatus']")
 	public WebElement SBASI;
 	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl04_imgASISBStatus']")
+	public WebElement SBASI3;
+	
 	@FindBy(xpath = "//*[@id='btnASIProceed']")
 	public WebElement SBASIProceed;
 	
@@ -672,7 +675,13 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='txtAgentMobNo']")
 	public WebElement AgentMobileNo;
 	
-	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveAwb']")
+	@FindBy(xpath = "//*[@id='txtNOP']")
+	public WebElement VTNOP;
+	
+	@FindBy(xpath = "//*[@id='txtGrossWt']")
+	public WebElement VTGrossWT;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveAwb']") 
 	public WebElement GenerateToken;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[13]/div/div/div[3]/input")
@@ -1221,8 +1230,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "(//*[@id='txtNOP'])[2]")
 	public WebElement VTNOP2;
 	
-	@FindBy(xpath = "(//*[@id='txtGrossWt'])[2]")
-	public WebElement VTGrossWT2;
+	
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[1]/div[2]/div/ul/li[6]/a/span")
 	public WebElement FFDropdownForAAdyaLogistics;
@@ -1272,6 +1280,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl03_imgSBTSP'])")
 	public WebElement TSP2;
 	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl04_imgSBTSP'])")
+	public WebElement TSP3;
+	
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_txtSBNos'])")
 	public WebElement SBNumberInput; 
 	
@@ -1296,7 +1307,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnCancelAwb'])")
 	public WebElement VehicleTokenBackBtn;
 	
-	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl02_lnkSBTSPAmount'])")
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl02_lnkSBTSPAmount'])") 
 	public WebElement UsedTSP;
 	
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_ibtnPrint'])")
@@ -1304,6 +1315,118 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[5]/div/div/div/div[1]/button/span")
 	public WebElement TSPPaymentClose;
+	
+	@FindBy(xpath = "(//*[@id='btnPrintAllToken'])")
+	public WebElement VehicleTokenPrintAll;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_chkTokenOption_0'])")
+	public WebElement VehicleTokenOnlyVT;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnPrintAll'])")
+	public WebElement VehicleTokenOnlyVTPrint;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_chkTokenOption_1'])")
+	public WebElement VehicleTokenTSPVT;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_gridASIMawb_ctl03_chkSB'])")
+	public WebElement SBASICheck2;
+	
+	
+	@FindBy(xpath = "(//*[@id='txtSBNumber'])[3]")
+	public WebElement AddSBNumber3;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[3]/td[2]/img")
+	public WebElement AddCalendar3;
+	
+	@FindBy(xpath = "(//*[@id='drpSBType'])[3]")
+	public WebElement AddSBTypeManual3;
+	
+	@FindBy(xpath = "(//*[@id='txtNOP'])[3]")
+	public WebElement AddSBNoOfPieces3;
+	
+	@FindBy(xpath = "(//*[@id='txtGrossWt'])[3]")
+	public WebElement AddSBGrossWt3;
+	
+	@FindBy(xpath = "//*[@id='addDimensions_3']")
+	public WebElement AddSBVolumetricWt3;
+	
+	@FindBy(xpath = "(//*[@id='txtFOBValue'])[3]")
+	public WebElement AddFOBValue3;
+	
+	@FindBy(xpath = "(//*[@id='txtExporterName'])[3]")
+	public WebElement AddExporterName3;
+	
+	//
+	@FindBy(xpath = "(//*[@id='txtSBNumber'])[4]")
+	public WebElement AddSBNumber4;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[4]/td[2]/img")
+	public WebElement AddCalendar4;
+	
+	@FindBy(xpath = "(//*[@id='drpSBType'])[4]")
+	public WebElement AddSBTypeManual4;
+	
+	@FindBy(xpath = "(//*[@id='txtNOP'])[4]")
+	public WebElement AddSBNoOfPieces4;
+	
+	@FindBy(xpath = "(//*[@id='txtGrossWt'])[4]")
+	public WebElement AddSBGrossWt4;
+	
+	@FindBy(xpath = "//*[@id='addDimensions_4']")
+	public WebElement AddSBVolumetricWt4;
+	
+	@FindBy(xpath = "(//*[@id='txtFOBValue'])[4]")
+	public WebElement AddFOBValue4;
+	
+	@FindBy(xpath = "(//*[@id='txtExporterName'])[4]")
+	public WebElement AddExporterName4;
+	
+	//
+	@FindBy(xpath = "(//*[@id='txtSBNumber'])[5]")
+	public WebElement AddSBNumber5;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[1]/div[3]/div/div[2]/div[1]/div[2]/div/table[2]/tbody/tr[5]/td[2]/img")
+	public WebElement AddCalendar5;
+	
+	@FindBy(xpath = "(//*[@id='drpSBType'])[5]")
+	public WebElement AddSBTypeManual5;
+	
+	@FindBy(xpath = "(//*[@id='txtNOP'])[5]")
+	public WebElement AddSBNoOfPieces5;
+	
+	@FindBy(xpath = "(//*[@id='txtGrossWt'])[5]")
+	public WebElement AddSBGrossWt5;
+	
+	@FindBy(xpath = "//*[@id='addDimensions_5']")
+	public WebElement AddSBVolumetricWt5;
+	
+	@FindBy(xpath = "(//*[@id='txtFOBValue'])[5]")
+	public WebElement AddFOBValue5;
+	
+	@FindBy(xpath = "(//*[@id='txtExporterName'])[5]")
+	public WebElement AddExporterName5;
+	
+	@FindBy(xpath = "(//*[@id='DeleteRow5'])")
+	public WebElement AddSBDeleteBtn5;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[2]/div/div/div/div[3]/button[2]")
+	public WebElement AddSBDeleteConfirmationBtn;
+	
+	@FindBy(xpath = "(//*[@id='DeleteRow4'])")
+	public WebElement AddSBDeleteBtn4;
+	
+	@FindBy(xpath = "(//*[@id='txtGrossWt'])[2]")
+	public WebElement VTGrossWT2;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnEdit'])")
+	public WebElement EditVehicleToken;
+	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnSave'])")
+	public WebElement EditedVehicleTokenSaveBtn;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[12]/div/div/div[3]/input")
+	public WebElement EditedVehicleTokenOkBtn;
+	
 	//----------------code----------------------------------------------------------
 	
 	public void QuickASITab() throws InterruptedException{
@@ -1550,7 +1673,7 @@ public void AddSB2() throws InterruptedException {
 	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
-		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("12345678");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
 		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
@@ -1561,7 +1684,7 @@ public void AddSB2() throws InterruptedException {
    
 public void TSP1() throws InterruptedException, AWTException{
 	   
-	   gmr.SBDetails1.click();Thread.sleep(2000);
+	   gmr.SBDetailsAadhya.click();Thread.sleep(2000);
 	   gmr.TSP1.click();Thread.sleep(2000);
 	   
 	   
@@ -1587,18 +1710,18 @@ public void TSP1() throws InterruptedException, AWTException{
 	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
-		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("12345678");Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(3000);
+		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(3000);
+		wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(3000);
    }
 
 
 //TSP2
 public void TSP2() throws InterruptedException, AWTException{
 	   
-	   gmr.SBDetails.click();Thread.sleep(2000);
+	   gmr.SBDetailsAadhya.click();Thread.sleep(2000);
 	   gmr.TSP2.click();Thread.sleep(2000);
 	   
 	   
@@ -1624,7 +1747,7 @@ public void TSP2() throws InterruptedException, AWTException{
 	      wm.JavascriptExecutorClick(driver, gmr.HSNCode);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TransactionPaswrd);Thread.sleep(2000);
-		gmr.TransactionPaswrd.sendKeys("Kale@123");Thread.sleep(2000);
+		gmr.TransactionPaswrd.sendKeys("12345678");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
 		wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
