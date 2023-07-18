@@ -42,6 +42,7 @@ Background: Launch the ACS application and login the application ACS_GMR_Practic
    Then To verify airline login ACS_GMR_Practice "<MAWBNo_13>"
    Then I login with "AADHYA USER" user given in "Login" sheet ACS_GMR_Practice
    Then TSP process from airline login in CB login ACS_GMR_Practice "<MAWBNo_13>"
+   Then To verify whether the user is able to do multiple SB ASI for all SB in CB login ACS_GMR_Practice "<MAWBNo_13>"
    Then To verify whether the user is able to delete SB details of existing SB before doing SB ASI from CB login ACS_GMR_Practice "<MAWBNo_13>"
    Then To verify whether the user is able to edit SB details of existing SB before doing SB ASI from CB login ACS_GMR_Practice "<MAWBNo_13>"
    Then To verify whether the user is able to delete SB details of existing SB after doing SB ASI from CB login ACS_GMR_Practice "<MAWBNo_13>"
