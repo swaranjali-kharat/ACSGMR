@@ -1307,6 +1307,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnCancelAwb'])")
 	public WebElement VehicleTokenBackBtn;
 	
+	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnBack'])")
+	public WebElement UsedVehicleTokenBackBtn;
+	
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_grdSBDetails_ctl02_lnkSBTSPAmount'])") 
 	public WebElement UsedTSP;
 	

@@ -700,7 +700,7 @@ public class ACS_GMR_Negative_Practice {
 			    System.out.println(window1);
 			    Thread.sleep(5000);
 		    	
-			    wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
+			    wm.JavascriptExecutorClick(driver, gmr.UsedVehicleTokenBackBtn);Thread.sleep(2000);
 			    verify = wm.isElementPresent(driver, gmr.Delete);Thread.sleep(2000);
 	            CommonMethods.Verify1(verify, true);Thread.sleep(2000);
 		    	

@@ -55,7 +55,7 @@ Background: Launch the ACS application and login the application ACS_GMR_Practic
    
    Examples:
    |MAWBNo_13   |
-   |18072062    |
+   |21072015    |
    
    #TC 1,4,17,19,24,25,30,31,32,33,34,35,37,38,39,40,41,42,43,47,49,51,52,53,60,62,64,66
    Scenario Outline: To verify whether the user is able to  rejection of CO from airline login ACS_GMR_Practice
