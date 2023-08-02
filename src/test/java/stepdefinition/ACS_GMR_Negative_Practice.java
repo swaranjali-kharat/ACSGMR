@@ -66,15 +66,16 @@ public class ACS_GMR_Negative_Practice {
 			Thread.sleep(4000);	
 			
 			
+			
 		}	
 		
 //		TC 5,6,17
 		
-		/*@Then("To verify user able to create Direct AWB in FF login ACS_GMR_Practice {string}")
+		@Then("To verify user able to create Direct AWB in FF login ACS_GMR_Practice {string}")
 		public void To_verify_user_able_to_create_Direct_AWB_in_FF_login_ACS_GMR_Practice(String mawbno_17) throws InterruptedException, AWTException {
 		
-		gmr.QuickASITab();
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+		gmr.QuickASITab();Thread.sleep(2020000);}
+		/*wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
 		gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
 
 		gmr.QuickASIMAWBNo.sendKeys(mawbno_17);
@@ -266,7 +267,7 @@ public class ACS_GMR_Negative_Practice {
 		
 		//TC 13,24,25,27,29
 		
-		@Then("To verify user able to create consol AWB in FF login add 1SB ACS_GMR_Practice {string}")
+		/*@Then("To verify user able to create consol AWB in FF login add 1SB ACS_GMR_Practice {string}")
 		public void To_verify_user_able_to_create_consol_AWB_in_FF_login_add_1SB_ACS_GMR_Practice(String mawbno_13) throws InterruptedException, AWTException {
 		
 			gmr.QuickASITab();
@@ -726,19 +727,19 @@ public class ACS_GMR_Negative_Practice {
 		
 		
 		
-		/*@Then("To verify whether the user is able to rejection of CO till TSP process from airline login ACS_GMR_Practice {string}")
-		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		//@Then("To verify whether the user is able to rejection of CO till TSP process from airline login ACS_GMR_Practice {string}")
+		//public void To_verify_whether_the_user_is_able_to_rejection_of_CO_till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
 		
-			Thread.sleep(8000);
-			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+			//Thread.sleep(8000);
+			//wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-			Thread.sleep(8000);
+			//Thread.sleep(8000);
 		
-		}*/
+		//}
 		
 		//For FF Login
 		
-		/*@Then("To verify whether the user is able to rejection of CO from airline login ACS_GMR_Practice {string}")
+		@Then("To verify whether the user is able to rejection of CO from airline login ACS_GMR_Practice {string}")
 		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
 		
 			gmr.QuickASITab();

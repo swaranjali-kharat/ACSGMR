@@ -84,7 +84,7 @@ public class ACS_GMR {
 	verify = wm.isElementPresent(driver, gmr.MAWBList);Thread.sleep(2000);
 	CommonMethods.Verify1(verify, true);Thread.sleep(2000);
 	
-	/*Actions action = new Actions(driver);
+	Actions action = new Actions(driver);
 	//Mouseover on an element
 	action.moveToElement(gmr.eAWBTab).perform();
 	Thread.sleep(1000);
@@ -92,7 +92,7 @@ public class ACS_GMR {
 	Actions action1 = new Actions(driver);
 	//Mouseover on an element
 	action1.moveToElement(gmr.CreateAWB).perform();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	
 	wm.JavascriptExecutorClick(driver, gmr.CreateAWB);Thread.sleep(1000);
 	
@@ -354,13 +354,13 @@ public class ACS_GMR {
 	wm.scrollTillPageUp();Thread.sleep(1000);wm.scrollTillPageUp();Thread.sleep(1000);
 	
 	
-	wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);*/
+	wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);
 	}
 	
 	
 	@Then("^To verify whether the user is able to Create Consol AWB ACS_GMR$")
 	public void To_verify_whether_the_user_is_able_to_Create_Consol_AWB_ACS_GMR() throws InterruptedException, AWTException {
-		/*
+		
 		//--------------------Console Shipment-----------
 		
 		Actions action = new Actions(driver);
@@ -715,14 +715,14 @@ public class ACS_GMR {
 		wm.scrollTillPageUp();Thread.sleep(1000);wm.scrollTillPageUp();Thread.sleep(1000);
 		
 		
-		wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);*/
+		wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);
 		
 		
 	}
 	
 	@Then("^To verify Whether User is able to Upload the HAWB Details From sub-menu of e-AWB ACS_GMR$")
 	public void To_verify_Whether_User_is_able_to_Upload_the_HAWB_Details_From_sub_menu_of_e_AWB_ACS_GMR() throws InterruptedException, AWTException {
-	/*
+	
 	//------------------------HAWB List Tab For Console Shipment----------------------------------------------------
 	Actions action = new Actions(driver);
 	action.moveToElement(gmr.eAWBTab).perform();
@@ -744,12 +744,12 @@ public class ACS_GMR {
 	
 	wm.JavascriptExecutorClick(driver, gmr.HAWBDetailsUpload);Thread.sleep(2000);
 	
-	wm.JavascriptExecutorClick(driver, gmr.HAWBNoHAWBDetailsUpload);Thread.sleep(2000);*/
+	wm.JavascriptExecutorClick(driver, gmr.HAWBNoHAWBDetailsUpload);Thread.sleep(2000);
 		
 		
 	//-------------------------------MAWB List Tab-------------------------------------------------
-	Actions action = new Actions(driver);
-	action.moveToElement(gmr.eAWBTab).perform();
+	Actions actionList = new Actions(driver);
+	actionList.moveToElement(gmr.eAWBTab).perform();
 	Thread.sleep(1000);
 	
 	wm.JavascriptExecutorClick(driver, gmr.MAWBListTab);Thread.sleep(2000);
@@ -1618,15 +1618,7 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.DwellTimeReportExportToExcel);Thread.sleep(2000);
 		
-		/*ChromeOptions options = new ChromeOptions();
-		DesiredCapabilities caps = new DesiredCapabilities();
-	    caps.setCapability("browser", "Chrome");
-	    caps.setCapability("browser_version", "75.0");
-	    caps.setCapability("os", "Windows");
-	    caps.setCapability("os_version", "10");
-	    caps.setCapability(ChromeOptions.CAPABILITY, options);
-	    //WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
-		Thread.sleep(1000);*/
+		
 		
 		reports.moveToElement(gmr.Reports).perform();
 		Thread.sleep(1000);

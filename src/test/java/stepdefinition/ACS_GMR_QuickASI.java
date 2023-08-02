@@ -46,10 +46,10 @@ import io.cucumber.java.en.When;
 
 public class ACS_GMR_QuickASI {
 	
-	private static final CharSequence AWB_QUICKASI_DIRECT_BONDED = "22063016";
-	private static final CharSequence AWB_QUICKASI_DIRECT_NONBONDED = "22063020";
-	private static final CharSequence AWB_QUICKASI_CONSOLE_BONDED = "22063031";
-	private static final CharSequence AWB_QUICKASI_CONSOLE_NONBONDED = "22063042";
+	private static final CharSequence AWB_QUICKASI_DIRECT_BONDED = "25072014";
+	private static final CharSequence AWB_QUICKASI_DIRECT_NONBONDED = "25072025";
+	private static final CharSequence AWB_QUICKASI_CONSOLE_BONDED = "25072036";
+	private static final CharSequence AWB_QUICKASI_CONSOLE_NONBONDED = "25072040";
 
 	private static final String WebElement = null;
 	private static final WebDriver Driver = null;
@@ -64,7 +64,7 @@ public class ACS_GMR_QuickASI {
 		System.out.println("pwd= " + Password);
 		// loginScreen.isLoginScreenDisplayed();
 		loginScreen.Login(Entity, Username, Password);
-		Thread.sleep(4000);	
+		Thread.sleep(4000);	;
 }
 	@Then("^To verify whether User is able to view Quick ASI Tab in e-AWB drop down ACS_GMR QuickASI$")
 	public void To_verify_whether_User_is_able_to_view_Quick_ASI_Tab_in_e_AWB_drop_down_ACS_GMR_QuickASI() throws InterruptedException, AWTException {
@@ -111,10 +111,10 @@ public class ACS_GMR_QuickASI {
 	gmr.QuickASINoP.sendKeys("12");Thread.sleep(2000);
 	
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIGrossWt);Thread.sleep(2000);
-	gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
+	gmr.QuickASIGrossWt.sendKeys("100");Thread.sleep(2000);
 	
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-	gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+	gmr.QuickASIChargeableWt.sendKeys("120");Thread.sleep(2000);
 	
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 	gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -165,10 +165,10 @@ public class ACS_GMR_QuickASI {
 	gmr.QuickASINoP.sendKeys("12");Thread.sleep(2000);
 			
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIGrossWt);Thread.sleep(2000);
-	gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
+	gmr.QuickASIGrossWt.sendKeys("100");Thread.sleep(2000);
 			
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-	gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+	gmr.QuickASIChargeableWt.sendKeys("120");Thread.sleep(2000);
 			
 	wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 	gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -225,10 +225,10 @@ public class ACS_GMR_QuickASI {
 				gmr.QuickASINoP.sendKeys("12");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIGrossWt);Thread.sleep(2000);
-				gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
+				gmr.QuickASIGrossWt.sendKeys("100");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-				gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+				gmr.QuickASIChargeableWt.sendKeys("120");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 				gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -320,10 +320,10 @@ public class ACS_GMR_QuickASI {
 				gmr.QuickASINoP.sendKeys("12");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIGrossWt);Thread.sleep(2000);
-				gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
+				gmr.QuickASIGrossWt.sendKeys("100");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-				gmr.QuickASIChargeableWt.sendKeys("100");Thread.sleep(2000);
+				gmr.QuickASIChargeableWt.sendKeys("120");Thread.sleep(2000);
 				
 				wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 				gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -490,11 +490,11 @@ public class ACS_GMR_QuickASI {
 			loginScreen.Login(Entity, Username, Password);
 			Thread.sleep(4000);	
 			
-			//gmr.AllRadioBtn.click();
-			//Thread.sleep(2000);
+			gmr.AllRadioBtn.click();
+			Thread.sleep(2000);
 			
-			//gmr.GmrHydRadioOKBtn.click();
-			//Thread.sleep(2000);
+			gmr.GmrHydRadioOKBtn.click();
+			Thread.sleep(2000);
 
 	
 	}
@@ -502,7 +502,7 @@ public class ACS_GMR_QuickASI {
 		@Then("^To verify whether the user is able to submit the SB ASI details ACS_GMR QuickASI$")
 		public void To_verify_whether_the_user_is_able_to_submit_the_SB_ASI_details_ACS_GMR_QuickASI() throws InterruptedException, AWTException {
 	
-			gmr.MAWBListInput.click();Thread.sleep(2000);
+			gmr.MAWBListInput.click();Thread.sleep(3000);
 			gmr.MAWBListInput.sendKeys(AWB_QUICKASI_DIRECT_BONDED);
 			Thread.sleep(2000);
 			
@@ -585,42 +585,9 @@ public class ACS_GMR_QuickASI {
 	
 		//---------------------------------Edocket-------------------------------------------
 		
-				wm.JavascriptExecutorClick(driver, gmr.Edocket);Thread.sleep(2000);
+		gmr.EDocket();
+		
 				
-				driver.switchTo().frame("IframEdocket1");
-				 Thread.sleep(4000);
-			      
-			      WebElement icon = driver.findElement(By.id("ctl00_hldPage_fuctlUploadDocs5"));
-			      Actions ob = new Actions(driver);
-			      ob.click(icon);
-			      Action action  = ob.build();
-			      action.perform();
-				
-				Robot uploaddoc = new Robot();
-				uploaddoc.delay(2000);
-
-				StringSelection sss1 = new StringSelection("E:\\dummy1 documents\\pdf1.pdf");
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sss1, null);
-
-				uploaddoc.keyPress(KeyEvent.VK_CONTROL);
-				uploaddoc.keyPress(KeyEvent.VK_V);
-				uploaddoc.delay(2000);
-
-				uploaddoc.keyPress(KeyEvent.VK_ENTER);
-//				uploaddoc.keyPress(KeyEvent.VK_ENTER);
-				uploaddoc.delay(1000);
-				
-				wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_UpoadBtn);Thread.sleep(2000);	
-				
-				wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox);Thread.sleep(2000);
-				
-
-				wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_Submit);Thread.sleep(2000);
-				
-				wm.JavascriptExecutorClick(driver, gmr.DocSelectedOkBtn);Thread.sleep(2000);
-				
-				driver.switchTo().defaultContent();
-				Thread.sleep(4000);
 				
 				
 				//---------------------------TSP---------------------------------------------------------------------------
@@ -862,11 +829,11 @@ public class ACS_GMR_QuickASI {
 					loginScreen.Login(Entity, Username, Password);
 					Thread.sleep(4000);	
 					
-					//gmr.AllRadioBtn.click();
-					//Thread.sleep(2000);
+					gmr.AllRadioBtn.click();
+					Thread.sleep(2000);
 					
-					//gmr.GmrHydRadioOKBtn.click();
-					//Thread.sleep(2000);
+					gmr.GmrHydRadioOKBtn.click();
+					Thread.sleep(2000);
 
 			
 			}
@@ -951,42 +918,9 @@ public class ACS_GMR_QuickASI {
 			
 				//---------------------------------Edocket-------------------------------------------
 				
-						wm.JavascriptExecutorClick(driver, gmr.Edocket);Thread.sleep(2000);
-						
-						driver.switchTo().frame("IframEdocket1");
-						 Thread.sleep(4000);
-					      
-					      WebElement icon = driver.findElement(By.id("ctl00_hldPage_fuctlUploadDocs5"));
-					      Actions ob = new Actions(driver);
-					      ob.click(icon);
-					      Action action  = ob.build();
-					      action.perform();
-						
-						Robot uploaddoc = new Robot();
-						uploaddoc.delay(2000);
-
-						StringSelection sss1 = new StringSelection("E:\\dummy1 documents\\pdf1.pdf");
-						Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sss1, null);
-
-						uploaddoc.keyPress(KeyEvent.VK_CONTROL);
-						uploaddoc.keyPress(KeyEvent.VK_V);
-						uploaddoc.delay(2000);
-
-						uploaddoc.keyPress(KeyEvent.VK_ENTER);
-//						uploaddoc.keyPress(KeyEvent.VK_ENTER);
-						uploaddoc.delay(1000);
-						
-						wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_UpoadBtn);Thread.sleep(2000);	
-						
-						wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox);Thread.sleep(2000);
-						
-
-						wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_Submit);Thread.sleep(2000);
-						
-						wm.JavascriptExecutorClick(driver, gmr.DocSelectedOkBtn);Thread.sleep(2000);
-						
-						driver.switchTo().defaultContent();
-						Thread.sleep(4000);
+				gmr.EDocket();
+				
+					
 						
 						
 						//---------------------------TSP---------------------------------------------------------------------------
@@ -1214,11 +1148,11 @@ public class ACS_GMR_QuickASI {
 						loginScreen.Login(Entity, Username, Password);
 						Thread.sleep(4000);	
 						
-						//gmr.AllRadioBtn.click();
-						//Thread.sleep(2000);
+						gmr.AllRadioBtn.click();
+						Thread.sleep(2000);
 						
-						//gmr.GmrHydRadioOKBtn.click();
-						//Thread.sleep(2000);
+						gmr.GmrHydRadioOKBtn.click();
+						Thread.sleep(2000);
 
 				
 				}
@@ -1303,42 +1237,9 @@ public class ACS_GMR_QuickASI {
 				
 					//---------------------------------Edocket-------------------------------------------
 					
-							wm.JavascriptExecutorClick(driver, gmr.Edocket);Thread.sleep(2000);
+					gmr.EDocket();
+					
 							
-							driver.switchTo().frame("IframEdocket1");
-							 Thread.sleep(4000);
-						      
-						      WebElement icon = driver.findElement(By.id("ctl00_hldPage_fuctlUploadDocs5"));
-						      Actions ob = new Actions(driver);
-						      ob.click(icon);
-						      Action action  = ob.build();
-						      action.perform();
-							
-							Robot uploaddoc = new Robot();
-							uploaddoc.delay(2000);
-
-							StringSelection sss1 = new StringSelection("E:\\dummy1 documents\\pdf1.pdf");
-							Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sss1, null);
-
-							uploaddoc.keyPress(KeyEvent.VK_CONTROL);
-							uploaddoc.keyPress(KeyEvent.VK_V);
-							uploaddoc.delay(2000);
-
-							uploaddoc.keyPress(KeyEvent.VK_ENTER);
-//							uploaddoc.keyPress(KeyEvent.VK_ENTER);
-							uploaddoc.delay(1000);
-							
-							wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_UpoadBtn);Thread.sleep(2000);	
-							
-							wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox);Thread.sleep(2000);
-							
-
-							wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_Submit);Thread.sleep(2000);
-							
-							wm.JavascriptExecutorClick(driver, gmr.DocSelectedOkBtn);Thread.sleep(2000);
-							
-							driver.switchTo().defaultContent();
-							Thread.sleep(4000);
 							
 							
 							//---------------------------TSP---------------------------------------------------------------------------
@@ -1565,11 +1466,11 @@ public class ACS_GMR_QuickASI {
 							loginScreen.Login(Entity, Username, Password);
 							Thread.sleep(4000);	
 							
-							//gmr.AllRadioBtn.click();
-							//Thread.sleep(2000);
+							gmr.AllRadioBtn.click();
+							Thread.sleep(2000);
 							
-							//gmr.GmrHydRadioOKBtn.click();
-							//Thread.sleep(2000);
+							gmr.GmrHydRadioOKBtn.click();
+							Thread.sleep(2000);
 
 					
 					}
@@ -1654,42 +1555,9 @@ public class ACS_GMR_QuickASI {
 					
 						//---------------------------------Edocket-------------------------------------------
 						
-								wm.JavascriptExecutorClick(driver, gmr.Edocket);Thread.sleep(2000);
+						gmr.EDocket();
+						
 								
-								driver.switchTo().frame("IframEdocket1");
-								 Thread.sleep(4000);
-							      
-							      WebElement icon = driver.findElement(By.id("ctl00_hldPage_fuctlUploadDocs5"));
-							      Actions ob = new Actions(driver);
-							      ob.click(icon);
-							      Action action  = ob.build();
-							      action.perform();
-								
-								Robot uploaddoc = new Robot();
-								uploaddoc.delay(2000);
-
-								StringSelection sss1 = new StringSelection("E:\\dummy1 documents\\pdf1.pdf");
-								Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sss1, null);
-
-								uploaddoc.keyPress(KeyEvent.VK_CONTROL);
-								uploaddoc.keyPress(KeyEvent.VK_V);
-								uploaddoc.delay(2000);
-
-								uploaddoc.keyPress(KeyEvent.VK_ENTER);
-//								uploaddoc.keyPress(KeyEvent.VK_ENTER);
-								uploaddoc.delay(1000);
-								
-								wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_UpoadBtn);Thread.sleep(2000);	
-								
-								wm.JavascriptExecutorClick(driver, gmr.RecordSelectionCheckbox);Thread.sleep(2000);
-								
-
-								wm.JavascriptExecutorClick(driver, gmr.CSDDoccument_Submit);Thread.sleep(2000);
-								
-								wm.JavascriptExecutorClick(driver, gmr.DocSelectedOkBtn);Thread.sleep(2000);
-								
-								driver.switchTo().defaultContent();
-								Thread.sleep(4000);
 								
 								
 								//---------------------------TSP---------------------------------------------------------------------------
