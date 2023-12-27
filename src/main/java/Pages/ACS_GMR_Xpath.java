@@ -37,7 +37,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_rblCTO_0']")
 	public WebElement AllRadioBtn;
 	
-	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnCTOYes']")
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div[2]/div/div/div/div[2]/table/tbody/tr[3]/td/input")
 	public WebElement GmrHydRadioOKBtn;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/div[3]/div/h5")
@@ -162,7 +162,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveShipConsignee']")
 	public WebElement SaveForAddShipper;
 	
-	@FindBy(xpath = "/html/body/form/div[13]/div[3]/div/button[1]")
+	@FindBy(xpath = "(//*[text()='Ok'])[5]")
 	public WebElement OkSaveForAddShipper;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[3]/div/table/tbody/tr[2]/td/span/table/tbody/tr[2]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td[1]/a/span/img")
@@ -192,7 +192,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveShipConsignee']")
 	public WebElement ConsigneeSaveBtn;
 	
-	@FindBy(xpath = "/html/body/form/div[13]/div[3]/div/button[1]")
+	@FindBy(xpath = "/html/body/form/div[15]/div[3]/div/button[1]")
 	public WebElement ConsigneeOkBtn;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[3]/div/table/tbody/tr[2]/td/span/table/tbody/tr[4]/td/span/table/tbody/tr/td[1]/table/tbody/tr[5]/td/a")
@@ -213,7 +213,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(css = "#aspnetForm > div:nth-child(44) > div.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix > button")
 	public WebElement RoutingClose;
 	
-	@FindBy(css = "#ctl00_hldPage_txtflightno1")
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtFlightNo']")
 	public WebElement FlightNo;
 	
 	@FindBy(css = "#ctl00_hldPage_txtflightno1")
@@ -228,7 +228,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='txtCgTotal_1']")
 	public WebElement total;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[3]/div/table/tbody/tr[2]/td/span/table/tbody/tr[8]/td/div/table/tbody/tr[2]/td[11]/input")
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtCargoDesc']")
 	public WebElement NatureOfGoods;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[3]/div/table/tbody/tr[2]/td/span/table/tbody/tr[8]/td/div/table/tbody/tr[2]/td[1]/img")
@@ -332,13 +332,16 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtMasterChgWeight']")
 	public WebElement QuickASIChargeableWt;
 	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtCarrier1']")
+	public WebElement QuickASICarrierField;
+	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtflightno1']")
 	public WebElement QuickASIFlightNo;
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/span")
 	public WebElement QuickASIAssignCHA;
 	
-	@FindBy(xpath = "//*[@id='ctl00_hldPage_mltSlctCHA_3']")
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_mltSlctCHA_4']")
 	public WebElement QuickASIAssignCHAAdvikEnterprises;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_mltSlctCHA_1']")
@@ -346,6 +349,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td[12]/table/tbody/tr/td/div/div[1]/div[2]/span")
 	public WebElement QuickASIAssignCHA1;
+	
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_txtCargoDesc']")
+	public WebElement NatureOfGoods_QuickASI;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnSaveAwb']")
 	public WebElement QuickASISave;
@@ -459,6 +465,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdMAWB_ctl02_hreApprovedCO']")
 	public WebElement CO;
 	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div[1]/div[31]/div/div/div[2]/div/table/tbody/tr[2]/td[2]/select/option[1]")
+	public WebElement KaleAirline1;
+	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_btnRequestCartingOrder']")
 	public WebElement COYesBtn;
 	
@@ -550,7 +559,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "//*[@id='txtVolume_1']")
 	public WebElement SBDimensionsVolumeCBM;
 	
-	@FindBy(xpath = "/html/body/form/div[10]/div[3]/div/button[1]")
+	@FindBy(xpath = "/html/body/form/div[11]/div[3]/div/button[1]")
 	public WebElement SBDimensionsOkBtn;
 	
 	@FindBy(xpath = "//*[@id='txtChargeableGrossWt']")
@@ -574,11 +583,17 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/table/tbody/tr[2]/td[15]/input")
 	public WebElement SBDetails;
 	
-	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/div/table/tbody/tr[2]/td[16]/input")
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div[1]/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/div/table/tbody/tr[2]/td[17]/input")
+	public WebElement SBDetailsAadya;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div[1]/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/div/table/tbody/tr[2]/td[16]/input")
 	public WebElement SBDetails1;
 	
-	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgASISBStatus']")
+	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_imgASISBStatus']") 
 	public WebElement SBASI;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[3]/div[1]/div/table/tbody/tr[2]/td[12]/input[1]") 
+	public WebElement SBASI1;
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl04_imgASISBStatus']")
 	public WebElement SBASI3;
@@ -659,6 +674,9 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	
 	@FindBy(xpath = "//*[@id='ctl00_hldPage_grdSBDetails_ctl02_lnkVTNo']")
 	public WebElement VehicleToken;
+	
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div[1]/div[2]/div[6]/div[4]/div[6]/div/div/div/fieldset/div[2]/div/table/tbody/tr[2]/td[18]/input[1]")
+	public WebElement VehicleToken1;
 	
 	@FindBy(xpath = "//*[@id='txtVehNo']")
 	public WebElement VehicleNumber;
@@ -1421,7 +1439,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	@FindBy(xpath = "(//*[@id='txtGrossWt'])[2]")
 	public WebElement VTGrossWT2;
 	
-	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnEdit'])")
+	@FindBy(xpath = "/html/body/form/div[4]/div[4]/div/div[2]/div[6]/div[10]/div[2]/a[2]/span/input")
 	public WebElement EditVehicleToken;
 	
 	@FindBy(xpath = "(//*[@id='ctl00_hldPage_btnSave'])")
@@ -1441,13 +1459,13 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	}
 	
 	
-	public void CO() throws InterruptedException {
+	public void CO() throws InterruptedException, AWTException {
 		
-          wm.JavascriptExecutorClick(driver, gmr.CO);Thread.sleep(1000);
+          wm.JavascriptExecutorClick(driver, gmr.CO);Thread.sleep(3000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.COYesBtn);Thread.sleep(1000);
+		wm.JavascriptExecutorClick(driver, gmr.COYesBtn);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.COOkBtn);Thread.sleep(1000);
+		wm.JavascriptExecutorClick(driver, gmr.COOkBtn);Thread.sleep(2000);
 		
 		Thread.sleep(8000);
 	}
@@ -1455,7 +1473,7 @@ public class ACS_GMR_Xpath extends Pages.BasePage {
 	public void MAWBASI() throws InterruptedException {
 		
 		gmr.MawbASI.click();Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.MawbASIOkBtn);Thread.sleep(1000);
+		wm.JavascriptExecutorClick(driver, gmr.MawbASIOkBtn);Thread.sleep(2000);
 	}
 	
 public void AddSB() throws InterruptedException {
@@ -1907,7 +1925,15 @@ public void VehicleTokenForAddShipments2() throws InterruptedException{
 		gmr.QuickASIGrossWt.sendKeys("120");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
-		gmr.QuickASIChargeableWt.sendKeys("50");Thread.sleep(2000);
+		gmr.QuickASIChargeableWt.sendKeys("120");Thread.sleep(2000);
+		
+		WebElement icon1 = driver.findElement(By.id("ctl00_hldPage_txtCarrier1"));
+	    Actions ob1 = new Actions(driver);
+	    ob1.click(icon1);
+	    Action destaction1  = ob1.build();
+	    destaction1.perform();Thread.sleep(2000);
+	    
+	    gmr.QuickASICarrierField.sendKeys("ZZ");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
 		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
@@ -1918,6 +1944,15 @@ public void VehicleTokenForAddShipments2() throws InterruptedException{
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA1);Thread.sleep(2000);
 		
+		WebElement natureofgoods = driver.findElement(By.id("ctl00_hldPage_txtCargoDesc"));
+	    Actions natureofgoodsob = new Actions(driver);
+	    natureofgoodsob.click(natureofgoods);
+	    Action natureofgoodsaction  = natureofgoodsob.build();
+	    natureofgoodsaction.perform();Thread.sleep(2000);
+	    driver.findElement(By.id("ctl00_hldPage_txtCargoDesc")).sendKeys("Natural");
+	    Thread.sleep(2000);
+		
+		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASISave);Thread.sleep(2000);
 	
 		wm.JavascriptExecutorClick(driver, gmr.QuickASISuccessMsg);Thread.sleep(2000);
@@ -1927,7 +1962,7 @@ public void VehicleTokenForAddShipments2() throws InterruptedException{
 public void QuickASIConsoleForAadhya() throws InterruptedException{
 	   
 	   Select ctoforquickASI = new Select(driver.findElement(By.id("ctl00_hldPage_ddlCustodianName")));  
-		ctoforquickASI.selectByVisibleText("Kale_GHA1");Thread.sleep(2000);
+		ctoforquickASI.selectByVisibleText("Kale_GHA1");Thread.sleep(4000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIConsoleRadioBtn);Thread.sleep(2000);
 		
@@ -1959,14 +1994,25 @@ public void QuickASIConsoleForAadhya() throws InterruptedException{
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIChargeableWt);Thread.sleep(2000);
 		gmr.QuickASIChargeableWt.sendKeys("150");Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
-		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(2000);
+		WebElement icon1 = driver.findElement(By.id("ctl00_hldPage_txtCarrier1"));
+	    Actions ob1 = new Actions(driver);
+	    ob1.click(icon1);
+	    Action destaction1  = ob1.build();
+	    destaction1.perform();Thread.sleep(2000);
+	    
+	    gmr.QuickASICarrierField.sendKeys("ZZ");Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.AAdhyaLogistics);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIFlightNo);Thread.sleep(2000);
+		gmr.QuickASIFlightNo.sendKeys("1234");Thread.sleep(4000);
+		
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.AAdhyaLogistics);Thread.sleep(2000);
 		//wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHAAdhyaLogistics);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA1);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA1);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.NatureOfGoods);Thread.sleep(4000);
+		gmr.NatureOfGoods.sendKeys("Natural");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASISave);Thread.sleep(2000);
 	
@@ -2021,6 +2067,9 @@ public void QuickASIForAdvik() throws InterruptedException{
 		//wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHAAdhyaLogistics);Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASIAssignCHA1);Thread.sleep(2000);
+		
+		wm.JavascriptExecutorClick(driver, gmr.NatureOfGoods);Thread.sleep(2000);
+		gmr.NatureOfGoods.sendKeys("Natural");Thread.sleep(2000);
 		
 		wm.JavascriptExecutorClick(driver, gmr.QuickASISave);Thread.sleep(2000);
 	
@@ -2088,9 +2137,9 @@ public void QuickASIForAdvik() throws InterruptedException{
 		
 		wm.JavascriptExecutorClick(driver, gmr.ApproveOk);Thread.sleep(4000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrow);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrow);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);Thread.sleep(2000);
    
 }
    

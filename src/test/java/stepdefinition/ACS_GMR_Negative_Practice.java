@@ -55,7 +55,7 @@ public class ACS_GMR_Negative_Practice {
 		public boolean verify;
 
 		@When("I login with {string} user given in {string} sheet ACS_GMR_Practice")
-		public void i_login_with_use_given_in_sheet_ACS_GMR_Practice(String entity, String sheetName) throws Throwable {
+		public void i_login_with_user_given_in_sheet_ACS_GMR_Practice(String entity, String sheetName) throws Throwable {
 			Entity = entity;
 			TestDataReader.ReadLoginDetails(Entity);
 			Thread.sleep(500);
@@ -65,8 +65,6 @@ public class ACS_GMR_Negative_Practice {
 			loginScreen.Login(Entity, Username, Password);
 			Thread.sleep(4000);	
 			
-			
-			
 		}	
 		
 //		TC 5,6,17
@@ -74,8 +72,8 @@ public class ACS_GMR_Negative_Practice {
 		@Then("To verify user able to create Direct AWB in FF login ACS_GMR_Practice {string}")
 		public void To_verify_user_able_to_create_Direct_AWB_in_FF_login_ACS_GMR_Practice(String mawbno_17) throws InterruptedException, AWTException {
 		
-		gmr.QuickASITab();Thread.sleep(2020000);}
-		/*wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
+		gmr.QuickASITab();Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
 		gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
 
 		gmr.QuickASIMAWBNo.sendKeys(mawbno_17);
@@ -90,7 +88,7 @@ public class ACS_GMR_Negative_Practice {
 		
 		wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-		Thread.sleep(8000);
+		Thread.sleep(1000);
 		}
 		
 		
@@ -102,10 +100,10 @@ public class ACS_GMR_Negative_Practice {
 			Thread.sleep(2000);
 			gmr.AirlineApprove();
 			
-			Thread.sleep(8000);
+			Thread.sleep(2000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-			Thread.sleep(8000);
+			Thread.sleep(1000);
 			
 		}	
 						
@@ -219,9 +217,10 @@ public class ACS_GMR_Negative_Practice {
 		wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
 		gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
 		wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(3000);
 		
-		gmr.SBDetails1.click();Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.SBDetails1);Thread.sleep(40000);
+		//gmr.SBDetails1.click();Thread.sleep(2000);
 			
 		gmr.TSP2(); 
         wm.JavascriptExecutorClick(driver, gmr.AddShipment);Thread.sleep(2000);
@@ -249,33 +248,44 @@ public class ACS_GMR_Negative_Practice {
 		wm.JavascriptExecutorClick(driver, gmr.AgentMobileNo);Thread.sleep(2000);
 		gmr.AgentMobileNo.sendKeys(cm.RandomNo(10));
 		wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(4000);
 		
-		gmr.SBDetails1.click();Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.SBDetails1);Thread.sleep(4000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.VehicleToken2);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleToken1);Thread.sleep(4000);
+		
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleToken2);Thread.sleep(2000);
 			
-		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
-		gmr.VehicleNumber.sendKeys("23459");Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		//wm.JavascriptExecutorClick(driver, gmr.VehicleNumber);Thread.sleep(2000);
+		//gmr.VehicleNumber.sendKeys("23459");Thread.sleep(2000);
 		
-		Thread.sleep(8000);
-		wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
+		//Thread.sleep(8000);
+		//wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-		Thread.sleep(8000);
-		 }*/
+		//Thread.sleep(1000);
+		 }
 		
-		//TC 13,24,25,27,29
+		//TC 13,26,27,29,48,50,54,55,56,61,63,65,67
 		
-		/*@Then("To verify user able to create consol AWB in FF login add 1SB ACS_GMR_Practice {string}")
+		@Then("To verify user able to create consol AWB in FF login add 1SB ACS_GMR_Practice {string}")
 		public void To_verify_user_able_to_create_consol_AWB_in_FF_login_add_1SB_ACS_GMR_Practice(String mawbno_13) throws InterruptedException, AWTException {
 		
+			
+			//gmr.AllRaadioBtn();Thread.sleep(2000);
+			
+			//gmr.AllRadioBtn.click();
+			//Thread.sleep(2000);
+			
+			gmr.GmrHydRadioOKBtn.click();
+			Thread.sleep(2000);
+			
 			gmr.QuickASITab();
 			wm.JavascriptExecutorClick(driver, gmr.QuickASIMAWBNoPrefix);Thread.sleep(2000);
 			gmr.QuickASIMAWBNoPrefix.sendKeys("999");Thread.sleep(2000);
 
 			gmr.QuickASIMAWBNo.sendKeys(mawbno_13);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			gmr.QuickASIConsoleForAadhya();
 			Thread.sleep(2000);
 			gmr.AddHAWBForAadhya();
@@ -288,13 +298,13 @@ public class ACS_GMR_Negative_Practice {
 			gmr.MAWBListInput.click();Thread.sleep(2000);
 			gmr.MAWBListInput.sendKeys(mawbno_13);
 			gmr.MAWBInput();
-			gmr.MAWBASI();	
+			gmr.MAWBASI();	Thread.sleep(2000);
 			gmr.CO();
 			
 			Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-			Thread.sleep(8000);
+			Thread.sleep(3000);
 		
 		}
 		
@@ -310,7 +320,7 @@ public class ACS_GMR_Negative_Practice {
 			
 			Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-			Thread.sleep(8000);
+			Thread.sleep(1000);
 			
 			
 			
@@ -324,7 +334,8 @@ public class ACS_GMR_Negative_Practice {
 			Actions bondedaction = new Actions(driver);
 			bondedaction.moveToElement(gmr.FFDropdownForAAdyaLogistics).perform();
 			Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.FFCustomBroker);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.FFCustomBroker);
+			Thread.sleep(1000);
 		}
 		
 		@Then("To verify whether the user is able to do multiple SB ASI for all SB in CB login ACS_GMR_Practice {string}")
@@ -490,7 +501,8 @@ public class ACS_GMR_Negative_Practice {
 			gmr.AddExporterName5.sendKeys("ADVIK");Thread.sleep(2000);
 			
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(1000);
 		}
 		
 		@Then("To verify whether the user is able to delete SB details of existing SB before doing SB ASI from CB login ACS_GMR_Practice {string}")
@@ -500,7 +512,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteBtn5);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteConfirmationBtn);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(1000);
 		
 		}
 		
@@ -523,7 +536,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.SBASIConfirmation);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBASIOk);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.TSP);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.EdocketMsg);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.EdocketMsg);
+			Thread.sleep(1000);
 			}
 		
 		@Then("To verify whether the user is able to delete SB details of existing SB after doing SB ASI from CB login ACS_GMR_Practice {string}")
@@ -533,7 +547,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteBtn4);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteConfirmationBtn);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(1000);
 			
 		}
 			
@@ -550,10 +565,12 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
 				
 			gmr.EDocket();
+		    
 			gmr.TSP1();
 			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
 			gmr.TSP2();
-			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);
+			Thread.sleep(1000);
 		}
 			
 			
@@ -585,9 +602,9 @@ public class ACS_GMR_Negative_Practice {
 			gmr.TransactionPaswrd.sendKeys("12345678");Thread.sleep(2000);
 		    wm.JavascriptExecutorClick(driver, gmr.TSPPayNow);Thread.sleep(2000);
 		    wm.JavascriptExecutorClick(driver, gmr.PaymentConfimationOkBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.TokenConfimationOkBtn);Thread.sleep(4000);
 
-			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(4000);
 			wm.JavascriptExecutorClick(driver, gmr.SBDetailsAadhya);Thread.sleep(4000);
 			wm.JavascriptExecutorClick(driver, gmr.UsedTSP);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.TSPPrint);Thread.sleep(2000);
@@ -605,7 +622,8 @@ public class ACS_GMR_Negative_Practice {
 		    System.out.println(window1);
 		    Thread.sleep(5000);
 		    
-		    wm.JavascriptExecutorClick(driver, gmr.TSPPaymentClose);Thread.sleep(2000);
+		    wm.JavascriptExecutorClick(driver, gmr.TSPPaymentClose);
+		    Thread.sleep(1000);
 		}
 		    
 		    @Then("To verify user able to create consol AWB in FF login add 1SB and generate multiple VT in CB login or not ACS_GMR_Practice {string}")
@@ -652,7 +670,8 @@ public class ACS_GMR_Negative_Practice {
 			gmr.VTGrossWT2.sendKeys("10");Thread.sleep(2000);
 			
 			wm.JavascriptExecutorClick(driver, gmr.GenerateToken);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenConfimationOkBtn);
+			Thread.sleep(1000);
 		    }
 		    
 		    
@@ -677,7 +696,7 @@ public class ACS_GMR_Negative_Practice {
 		    String window1 = windows[0].toString();
 		    driver.switchTo().window(window1);
 		    System.out.println(window1);
-		    Thread.sleep(5000);
+		    Thread.sleep(2000);
 		    }
 		    
 		    
@@ -703,39 +722,21 @@ public class ACS_GMR_Negative_Practice {
 		    	
 			    wm.JavascriptExecutorClick(driver, gmr.UsedVehicleTokenBackBtn);Thread.sleep(2000);
 			    verify = wm.isElementPresent(driver, gmr.Delete);Thread.sleep(2000);
-	            CommonMethods.Verify1(verify, true);Thread.sleep(2000);
-		    	
-		    	
+	            CommonMethods.Verify1(verify, true);
+	            Thread.sleep(2000);
 		    
-			
-		
-			
-			//wm.JavascriptExecutorClick(driver, gmr.AirlineFlightNo);Thread.sleep(4000);
-			//gmr.AirlineFlightNo.clear();Thread.sleep(2000);
-			//gmr.AirlineFlightNo.sendKeys("5678");Thread.sleep(2000);
-			
-			//wm.JavascriptExecutorClick(driver, gmr.Approve);Thread.sleep(4000);
-			
-			//wm.JavascriptExecutorClick(driver, gmr.ApproveOk);Thread.sleep(4000);
 		    }
+		
+		
+		@Then("To verify whether the user is able to rejection of CO till TSP process from airline login ACS_GMR_Practice {string}")
+		public void To_verify_whether_the_user_is_able_to_rejection_of_CO_till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
+		
+			Thread.sleep(8000);
+			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
+			Thread.sleep(1000);
 		
-		
-		
-		
-		
-		
-		
-		
-		//@Then("To verify whether the user is able to rejection of CO till TSP process from airline login ACS_GMR_Practice {string}")
-		//public void To_verify_whether_the_user_is_able_to_rejection_of_CO_till_TSP_process_from_airline_login_ACS_GMR_Practice(String mawbno_39) throws InterruptedException, AWTException {
-		
-			//Thread.sleep(8000);
-			//wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-
-			//Thread.sleep(8000);
-		
-		//}
+		}
 		
 		//For FF Login
 		
@@ -783,7 +784,7 @@ public class ACS_GMR_Negative_Practice {
 			Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-			Thread.sleep(8000);
+			Thread.sleep(1000);
 			
 			
 			
@@ -801,7 +802,7 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.COOkBtn);Thread.sleep(1000);
 			Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-			Thread.sleep(8000);
+			Thread.sleep(1000);
 			
 			
 			
@@ -826,7 +827,7 @@ public class ACS_GMR_Negative_Practice {
 			
 			Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-			Thread.sleep(8000);
+			Thread.sleep(1000);
 			
 			
 		}
@@ -838,6 +839,7 @@ public class ACS_GMR_Negative_Practice {
 			gmr.MAWBListInput.click();Thread.sleep(2000);
 			gmr.MAWBListInput.sendKeys(mawbno_39);
 			gmr.MAWBInput();
+			Thread.sleep(1000);
 		}
 		
 		@Then("To verify whether the user is able to do multiple SB ASI for all SB ACS_GMR_Practice {string}")
@@ -1003,7 +1005,8 @@ public class ACS_GMR_Negative_Practice {
 			gmr.AddExporterName5.sendKeys("ADVIK");Thread.sleep(2000);
 			
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(2000);
 		}
 		
 		@Then("To verify whether the user is able to delete SB details of existing SB before doing SB ASI from FF login ACS_GMR_Practice {string}")
@@ -1013,7 +1016,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteBtn5);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteConfirmationBtn);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(2000);
 		
 		}
 		
@@ -1036,7 +1040,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.SBASIConfirmation);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBASIOk);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.TSP);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.EdocketMsg);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.EdocketMsg);
+			Thread.sleep(2000);
 			}
 		
 		@Then("To verify whether the user is able to delete SB details of existing SB after doing SB ASI from FF login ACS_GMR_Practice {string}")
@@ -1046,7 +1051,8 @@ public class ACS_GMR_Negative_Practice {
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteBtn4);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.AddSBDeleteConfirmationBtn);Thread.sleep(2000);
 			wm.JavascriptExecutorClick(driver, gmr.SBSaveBtn);Thread.sleep(2000);
-			wm.JavascriptExecutorClick(driver, gmr.SBOk);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.SBOk);
+			Thread.sleep(2000);
 			
 		}
 			
@@ -1066,7 +1072,8 @@ public class ACS_GMR_Negative_Practice {
 			gmr.TSP1();
 			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
 			gmr.TSP2();
-			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);Thread.sleep(2000);
+			wm.JavascriptExecutorClick(driver, gmr.VehicleTokenBackBtn);
+			Thread.sleep(2000);
 		}
 			
 			
@@ -1118,7 +1125,8 @@ public class ACS_GMR_Negative_Practice {
 		    System.out.println(window1);
 		    Thread.sleep(5000);
 		    
-		    wm.JavascriptExecutorClick(driver, gmr.TSPPaymentClose);Thread.sleep(2000);
+		    wm.JavascriptExecutorClick(driver, gmr.TSPPaymentClose);
+		    Thread.sleep(2000);
 		}
 		    
 		    @Then("To verify whether the user is able to view the TSP and VT Print as well as ACS_GMR_Practice {string}")
@@ -1129,7 +1137,9 @@ public class ACS_GMR_Negative_Practice {
 		    gmr.VehicleToken();
 		    
 		    wm.JavascriptExecutorClick(driver, gmr.SBDetailsAadhya);Thread.sleep(2000);
-		    wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(2000);
+		    wm.JavascriptExecutorClick(driver, gmr.VehicleToken);Thread.sleep(3000);
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,250)", "");
 		    gmr.EditVehicleToken.click();Thread.sleep(2000);
 		    gmr.DriverName.clear();Thread.sleep(2000);
 		    gmr.DriverName.sendKeys("John");Thread.sleep(2000);
@@ -1153,7 +1163,7 @@ public class ACS_GMR_Negative_Practice {
 		    String window1 = windows[0].toString();
 		    driver.switchTo().window(window1);
 		    System.out.println(window1);
-		    Thread.sleep(5000);
+		    Thread.sleep(500);
 		    }
 		    
 		    
@@ -1177,13 +1187,13 @@ public class ACS_GMR_Negative_Practice {
 			    System.out.println(window1);
 			    Thread.sleep(5000);
 		    	
-			    verify = wm.isElementPresent(driver, gmr.Delete);Thread.sleep(2000);
-	            CommonMethods.Verify1(verify, true);Thread.sleep(2000);
+//			    verify = wm.isElementPresent(driver, gmr.Delete);Thread.sleep(2000);
+//	            CommonMethods.Verify1(verify, true);Thread.sleep(2000);
 		    	
 		    	
 		    Thread.sleep(8000);
 			wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
-			Thread.sleep(8000);
+			Thread.sleep(500);
 			
 		}
 		
@@ -1205,5 +1215,6 @@ public class ACS_GMR_Negative_Practice {
 			//wm.JavascriptExecutorClick(driver, gmr.Approve);Thread.sleep(4000);
 			
 			//wm.JavascriptExecutorClick(driver, gmr.ApproveOk);Thread.sleep(4000);
-		}*/
+			Thread.sleep(4000);
+		}
 		}

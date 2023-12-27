@@ -80,7 +80,7 @@ public class ACS_GMR {
 	Thread.sleep(2000);
 	
 	
-	//-----------------------------For Direct Shipment---------------------------------------------
+	//-----------------------------For Direct Shipment----------------------------
 	verify = wm.isElementPresent(driver, gmr.MAWBList);Thread.sleep(2000);
 	CommonMethods.Verify1(verify, true);Thread.sleep(2000);
 	
@@ -129,7 +129,7 @@ public class ACS_GMR {
 	
 	//--------------------------------Shippers Name and Address-----------------------------------------------
 
-    gmr.ShippersNameAddBtn.click();Thread.sleep(1000); 
+    gmr.ShippersNameAddBtn.click();Thread.sleep(2000); 
    
     System.out.print("ab checked....\n");Thread.sleep(500);
 	
@@ -216,14 +216,19 @@ public class ACS_GMR {
 	gmr.ConsigneeZipCode.sendKeys("56789");Thread.sleep(1000);
 	System.out.print("consignee zip code checked....\n");Thread.sleep(500);
 	
-	gmr.ConsigneeSaveBtn.click();Thread.sleep(1000);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("arguments[0].scrollIntoView();",gmr.ConsigneeZipCode);Thread.sleep(2000);
+	
+	//gmr.ConsigneeSaveBtn.click();Thread.sleep(3000);
+	wm.JavascriptExecutorClick(driver, gmr.ConsigneeSaveBtn);Thread.sleep(2000);
 	System.out.print("consignee data saved checked....\n");Thread.sleep(500);
 	
-	driver.switchTo().defaultContent();Thread.sleep(2000);
+	driver.switchTo().defaultContent();Thread.sleep(5000);
 	System.out.print("aa checked....\n");Thread.sleep(2000);
 	
 	//Thread.sleep(70000);
-	gmr.ConsigneeOkBtn.click();Thread.sleep(2000);
+	//gmr.ConsigneeOkBtn.click();Thread.sleep(3000);
+	wm.JavascriptExecutorClick(driver, gmr.ConsigneeOkBtn);Thread.sleep(3000);
 	System.out.print("consignee data saved  ok checked....\n");Thread.sleep(500);
 	
 	//---------------------Routing-----------------------------------
@@ -264,6 +269,9 @@ public class ACS_GMR {
     System.out.print("window closed....\n");Thread.sleep(2000);
 	
 	//----------------------------Flight Requested------------------------------------------------
+    
+    JavascriptExecutor jss = (JavascriptExecutor) driver;
+    jss.executeScript("window.scrollBy(0,250)", ""); Thread.sleep(2000);
 	
 	
     wm.JavascriptExecutorClick(driver, gmr.FlightNo);Thread.sleep(2000);
@@ -336,8 +344,8 @@ public class ACS_GMR {
 	gmr.DueCarrierCharges.click();
 	gmr.DueCarrierCharges.sendKeys("141");Thread.sleep(2000);
 	
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("window.scrollBy(0,250)", "");Thread.sleep(2000);
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+	js1.executeScript("window.scrollBy(0,250)", "");Thread.sleep(2000);
 	
 	
 	//gmr.SaveAsTemplate.click();Thread.sleep(2000);
@@ -354,371 +362,12 @@ public class ACS_GMR {
 	wm.scrollTillPageUp();Thread.sleep(1000);wm.scrollTillPageUp();Thread.sleep(1000);
 	
 	
-	wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);
+	wm.JavascriptExecutorClick(driver, gmr.FinalOk);
+	Thread.sleep(3000);
 	}
 	
 	
-	@Then("^To verify whether the user is able to Create Consol AWB ACS_GMR$")
-	public void To_verify_whether_the_user_is_able_to_Create_Consol_AWB_ACS_GMR() throws InterruptedException, AWTException {
-		
-		//--------------------Console Shipment-----------
-		
-		Actions action = new Actions(driver);
-		//Mouseover on an element
-		action.moveToElement(gmr.eAWBTab).perform();
-		Thread.sleep(1000);
-		//----------------------------------------------------------------------------
-		Actions action1 = new Actions(driver);
-		//Mouseover on an element
-		action1.moveToElement(gmr.CreateAWB).perform();
-		Thread.sleep(1000);
-		
-		wm.JavascriptExecutorClick(driver, gmr.CreateAWB);Thread.sleep(1000);
-		
-		wm.JavascriptExecutorClick(driver, gmr.MsgPopupOkBtn);Thread.sleep(1000);
-		 
-		//--------------------------------------------------------------------------
-		gmr.CreateAWBBtn.click();
-		Thread.sleep(1000);
-		
-		Select dropdown = new Select(driver.findElement(By.id("ctl00_hldPage_drpCopyFrom")));  
-		dropdown.selectByVisibleText("New");  
-		
-		Thread.sleep(2000);
-	    //----------------------------------------------------------------------------
-		
-		gmr.CTOBtn.click();
-		Thread.sleep(1000);
-		
-		Select dropdown1 = new Select(driver.findElement(By.id("ctl00_hldPage_ddlCustodianName")));  
-		dropdown1.selectByVisibleText("Kale_GHA1");  
-		
-		Thread.sleep(2000);
-		
-	   //-----------------------------------------------------------------------------
-		
-		gmr.Console.click();	Thread.sleep(1000); 
-		
-		//-------------------------------------------------------------------------------
-		
-		gmr.AWBNoPrefix.sendKeys("999"); Thread.sleep(1000);    
-		
-		gmr.AWBNo.sendKeys(TestDataReader.Create_AWBNo_Console());
-		Thread.sleep(2000);
-		
-		WebElement icon = driver.findElement(By.id("ctl00_hldPage_lblawb"));
-	    Actions ob = new Actions(driver);
-	    ob.click(icon);
-	    Action Clickaction  = ob.build();
-	    Clickaction.perform();
-	    Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.CreateHAWBPopup);Thread.sleep(2000);
-	    
-	    //-----------------Add House Manifest--------------------------------------------
-	    
-	    driver.switchTo().frame(0);
-	    Thread.sleep(1000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestHAWBNo);Thread.sleep(2000);
-	    gmr.HouseManifestHAWBNo.sendKeys("h1");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestOrigin);Thread.sleep(2000);
-	    gmr.HouseManifestOrigin.sendKeys("HYD");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestDest);Thread.sleep(2000);
-	    gmr.HouseManifestDest.sendKeys("LHR");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestNoP);Thread.sleep(2000);
-	    gmr.HouseManifestNoP.sendKeys("12");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestGrossWt);Thread.sleep(2000);
-	    gmr.HouseManifestGrossWt.sendKeys("120");Thread.sleep(2000);
-	    
-	    Select chargecode = new Select(driver.findElement(By.id("ctl00_hldPageHeader_rptHouse_ctl01_ddlChargeCode")));  
-	    chargecode.selectByVisibleText("CA");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestCargoDescription);Thread.sleep(2000);
-	    gmr.HouseManifestCargoDescription.sendKeys("Natural");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HouseManifestOCIDetails);Thread.sleep(2000);
-	    
-	    Select infoidentifier = new Select(driver.findElement(By.id("selInfidenfier_1")));  
-	    infoidentifier.selectByVisibleText("AGT");Thread.sleep(2000);
-	    
-	    Select tradeidentificationcode = new Select(driver.findElement(By.id("selociOperator_1")));  
-	    tradeidentificationcode.selectByVisibleText("TRADE IDENTIFICATION");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.TradeIdentificationCodeText);Thread.sleep(2000);
-	    gmr.TradeIdentificationCodeText.sendKeys("Trade");Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.TradeIdentificationCodePopupOk);Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.SLAC);Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HSCode);Thread.sleep(2000);
-	    
-	    wm.JavascriptExecutorClick(driver, gmr.HSCodeDetail);Thread.sleep(2000);
-	    gmr.HSCodeDetail.sendKeys("123456");Thread.sleep(2000);
-	    
-	    JavascriptExecutor scrolldown = (JavascriptExecutor) driver;
-	    scrolldown.executeScript("window.scrollBy(0,150)", "");
-	    Thread.sleep(1000);
-	    
-	   // WebElement hscodeicon = driver.findElement(By.id("ctl00_hldPage_lblawb"));
-	   // Actions hscodeob = new Actions(driver);
-	    //ob.click(hscodeicon);
-	    //Action hscodeaction  = hscodeob.build();
-	   // hscodeaction.perform();
-	    //Thread.sleep(2000);
-	    
-	   // driver.switchTo().frame("1");
-	   // Thread.sleep(1000);
-	    wm.JavascriptExecutorClick(driver, gmr.HSCodeDetailOk);Thread.sleep(2000);
-	    
-	    Select assigncha = new Select(driver.findElement(By.id("ctl00_hldPageHeader_rptHouse_ctl01_mltSlctCHAForHAWB")));  
-	    assigncha.selectByVisibleText("ADVIK ENTERPRISES");Thread.sleep(2000);
-	    
-		//--------------------------------Shippers Name and Address-----------------------------------------------
-		
-	    gmr.ShippersNameAddBtn.click();Thread.sleep(1000); 
-	   
-	    System.out.print("ab checked....\n");Thread.sleep(500);
-		
-		wm.JavascriptExecutorClick(driver, gmr.HAWBCreationMsgBtn);Thread.sleep(2000);
-		driver.switchTo().frame(0);
-		
-		//driver.switchTo().frame("IframConsignee");
-		Thread.sleep(1000);
-
-		System.out.print("In frame....");Thread.sleep(500);
-		
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		wm.scrollTillPageUp();
-		Thread.sleep(2000);
-		
-		gmr.ShippersName.click();Thread.sleep(1000);
-		System.out.print("Shipper name checked....\n");Thread.sleep(500);
-		gmr.ShippersName.sendKeys("ACS Shipper Swaranjali");Thread.sleep(2000);
-		
-		gmr.Address.click();Thread.sleep(1000);
-		System.out.print("Address checked....\n");Thread.sleep(500);
-		gmr.Address.sendKeys("Hydrabad");Thread.sleep(2000);
-		
-		
-		
-		//driver.switchTo().defaultContent();Thread.sleep(2000);
-		
-		gmr.country.click();Thread.sleep(1000);
-		System.out.print("country checked....\n");Thread.sleep(500);
-		gmr.country.sendKeys("in");Thread.sleep(2000);
-		
-		gmr.countryName.click();Thread.sleep(1000);
-		System.out.print("country Name checked....\n");Thread.sleep(1000);
-		
-		gmr.city.click();Thread.sleep(1000);
-		System.out.print("city checked....\n");Thread.sleep(1000);
-		gmr.city.sendKeys("hyd");Thread.sleep(2000);
-		
-		gmr.cityName.click();Thread.sleep(1000);
-		System.out.print("city name checked....\n");Thread.sleep(1000);
-		
-		gmr.ZipCode.click();Thread.sleep(1000);
-		System.out.print("Zip code checked....\n");Thread.sleep(500);
-		gmr.ZipCode.sendKeys("45456");Thread.sleep(2000);
-		
-		gmr.SaveForAddShipper.click();Thread.sleep(1000);
-		System.out.print("saved all shipper data  checked....\n");Thread.sleep(200);
-		
-		driver.switchTo().parentFrame();Thread.sleep(2000);
-		//Thread.sleep(2000);
-		
-		gmr.OkSaveForAddShipper.click();Thread.sleep(2000);
-		
-		
-		
-		//--------------------------------consignne Name and Address-----------------------------------------------
-		
-		gmr.ConsigneeNameAddBtn.click();Thread.sleep(1000); 
-		
-		driver.switchTo().frame("IframConsignee");
-		Thread.sleep(1000);
-		
-		gmr.ConsigneeName.click();Thread.sleep(1000);
-		gmr.ConsigneeName.sendKeys("ACS Consignee swaranjali");Thread.sleep(1000);
-		System.out.print("Consignee name checked....\n");Thread.sleep(500);
-		
-		gmr.ConsigneeAddress.click();Thread.sleep(1000);
-		gmr.ConsigneeAddress.sendKeys("Hydrabad");Thread.sleep(1000);
-		System.out.print("Consignee name checked....\n");Thread.sleep(500);
-		
-		gmr.ConsigneeCounrty.click();Thread.sleep(1000);
-		gmr.ConsigneeCounrty.sendKeys("ae");Thread.sleep(1000);
-		System.out.print("consignee country checked....\n");Thread.sleep(500);
-		
-		gmr.ConsigneeCounrtyName.click();Thread.sleep(1000);
-		
-		gmr.ConsigneeCity.click();Thread.sleep(1000);
-		gmr.ConsigneeCity.sendKeys("dxb");Thread.sleep(1000);
-		System.out.print("consignee city checked....\n");Thread.sleep(500);
-		
-		gmr.ConsigneeCityName.click();Thread.sleep(1000);
-		
-		gmr.ConsigneeZipCode.click();Thread.sleep(1000);
-		gmr.ConsigneeZipCode.sendKeys("56789");Thread.sleep(1000);
-		System.out.print("consignee zip code checked....\n");Thread.sleep(500);
-		
-		gmr.ConsigneeSaveBtn.click();Thread.sleep(1000);
-		System.out.print("consignee data saved checked....\n");Thread.sleep(500);
-		
-		driver.switchTo().defaultContent();Thread.sleep(2000);
-		System.out.print("aa checked....\n");Thread.sleep(2000);
-		
-		//Thread.sleep(70000);
-		gmr.ConsigneeOkBtn.click();Thread.sleep(2000);
-		System.out.print("consignee data saved  ok checked....\n");Thread.sleep(500);
-		
-		//---------------------Routing-----------------------------------
-		
-		wm.JavascriptExecutorClick(driver, gmr.Routing);Thread.sleep(2000);
-		
-		Set<String> allwindowid = driver.getWindowHandles();
-	    Object[] windows = allwindowid.toArray();
-	    String window2 = windows[0].toString();        
-	    driver.switchTo().window(window2); 
-	    System.out.println(allwindowid);
-	    System.out.println(window2);
-	    Thread.sleep(5000);
-		
-		
-		
-	    System.out.print("ab checked....\n");Thread.sleep(500);
-	    wm.JavascriptExecutorClick(driver, gmr.Routing);Thread.sleep(2000);
-	    //driver.switchTo().frame("IframConsignee");
-	    Thread.sleep(2000);
-		
-		System.out.print("abc checked....\n");Thread.sleep(500);
-		gmr.DestPort.click();Thread.sleep(2000);
-		gmr.DestPort.sendKeys("LHR");Thread.sleep(2000);
-		
-		gmr.DestPortCountry.click();Thread.sleep(1000);
-		
-		gmr.Via2.click();Thread.sleep(2000);
-		
-		//gmr.RoutingOk.click();Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.RoutingOk);Thread.sleep(2000);
-		
-		String window1 = windows[0].toString();
-	    driver.switchTo().window(window1);
-	    System.out.println(window1);
-	    Thread.sleep(5000);
-	    
-	    System.out.print("window closed....\n");Thread.sleep(2000);
-		
-		//----------------------------Flight Requested------------------------------------------------
-		
-		
-	    wm.JavascriptExecutorClick(driver, gmr.FlightNo);Thread.sleep(2000);
-		
-		gmr.FlightNo.sendKeys("276");Thread.sleep(2000);
-		gmr.FlightNo.sendKeys("276");Thread.sleep(2000);
-		
-		//----------------------------Charge Code------------------------------------------------
-		
-		gmr.ChargeCode.click();
-		Thread.sleep(2000);
-		Select dropdown3 = new Select(driver.findElement(By.id("ctl00_hldPage_ddlChargeCode")));  
-		dropdown3.selectByVisibleText("PP"); 
-		
-		Thread.sleep(2000);
-		
-		//wm.JavascriptExecutorClick(driver, gmr.CustomBroker);Thread.sleep(2000);
-		//wm.JavascriptExecutorClick(driver, gmr.advikEnterpriesesdropdown);Thread.sleep(2000);
-		//wm.JavascriptExecutorClick(driver, gmr.CustomBroker1);Thread.sleep(2000);
-		
-		//----------------------------Reates Charge------------------------------------------------
-		
-		wm.scrollTillPageEnd();Thread.sleep(1000);
-		
-		gmr.UncheckRates.click();Thread.sleep(2000);
-		
-		gmr.RateCharges.click();Thread.sleep(2000);
-		gmr.RateCharges.sendKeys("10");Thread.sleep(2000);
-		gmr.RateCharges.sendKeys("10");Thread.sleep(1000);
-		gmr.total.click();Thread.sleep(2000);
-		
-		//----------------------------Dimensions------------------------------------------------
-		
-		gmr.dimensions.click();Thread.sleep(2000);
-		gmr.NumberOfPieces.click();Thread.sleep(2000);
-		gmr.NumberOfPieces.sendKeys("12");Thread.sleep(2000);
-		
-		gmr.LengthOfPieces.click();Thread.sleep(2000);
-		gmr.LengthOfPieces.sendKeys("30");Thread.sleep(2000);
-		
-		gmr.WidthOfPieces.click();Thread.sleep(2000);
-		gmr.WidthOfPieces.sendKeys("20");Thread.sleep(2000);
-		
-		gmr.HightOfPieces.click();Thread.sleep(2000);
-		gmr.HightOfPieces.sendKeys("10");Thread.sleep(2000);
-		
-		gmr.DimensionsOkBtn.click();Thread.sleep(2000);
-		
-		gmr.GrossWeight.click();Thread.sleep(2000);
-		gmr.GrossWeight.sendKeys("120");Thread.sleep(2000);
-		
-		Select dropdown4 = new Select(driver.findElement(By.id("selRateClass_1")));  
-		dropdown4.selectByVisibleText("Q");Thread.sleep(2000);
-		
-		gmr.total.click();Thread.sleep(2000);
-		
-		gmr.NatureOfGoods.click();Thread.sleep(2000);
-		gmr.NatureOfGoods.sendKeys("Natural");Thread.sleep(2000);
-		
-		gmr.AgentChargesCode.click();
-		gmr.AgentChargesCode.sendKeys("AWA");Thread.sleep(2000);
-		
-		gmr.AgentCharges.click();
-		gmr.AgentCharges.sendKeys("121");Thread.sleep(2000);
-		
-		
-		gmr.DueCarrierCode.click();
-		gmr.DueCarrierCode.sendKeys("AWC");Thread.sleep(2000);
-		
-		gmr.DueCarrierCharges.click();
-		gmr.DueCarrierCharges.sendKeys("141");Thread.sleep(2000);
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,250)", "");Thread.sleep(2000);
-		
-		
-		//gmr.SaveAsTemplate.click();Thread.sleep(2000);
-		wm.JavascriptExecutorClick(driver, gmr.SaveAsTemplate);Thread.sleep(2000);
-		
-		gmr.SaveTemplateName.click();Thread.sleep(2000);
-		//gmr.SaveTemplateName.sendKeys("GmrSwaranjali1");Thread.sleep(2000);
-		gmr.SaveTemplateName.sendKeys("GmrSwaranjali1");Thread.sleep(2000);
-		
-		wm.JavascriptExecutorClick(driver, gmr.Save);Thread.sleep(4000);
-		
-		wm.JavascriptExecutorClick(driver, gmr.Close);Thread.sleep(4000);
-		
-		wm.scrollTillPageUp();Thread.sleep(1000);wm.scrollTillPageUp();Thread.sleep(1000);
-		
-		
-		wm.JavascriptExecutorClick(driver, gmr.FinalOk);Thread.sleep(4000);
-		
-		
-	}
+	
 	
 	@Then("^To verify Whether User is able to Upload the HAWB Details From sub-menu of e-AWB ACS_GMR$")
 	public void To_verify_Whether_User_is_able_to_Upload_the_HAWB_Details_From_sub_menu_of_e_AWB_ACS_GMR() throws InterruptedException, AWTException {
@@ -790,7 +439,7 @@ public class ACS_GMR {
 
 	wm.driver.get("https://acsdemo.upliftindia.com/ACS_GMR_STG/UI/UpliftLogin.aspx");
 
-	Thread.sleep(8000);
+	Thread.sleep(1000);
 	}
 	
 	@Then("I login with {string} airline user given in {string} sheet ACS_GMR")
@@ -827,7 +476,8 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrow);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);
+		Thread.sleep(2000);
 		
 	
 }
@@ -1078,7 +728,7 @@ public class ACS_GMR {
 	cargotypes1.selectByVisibleText("EAP"); Thread.sleep(2000); 
 	
 	wm.JavascriptExecutorClick(driver, gmr.LCShipment);Thread.sleep(1000);
-	gmr.LCShipment.sendKeys("abcdefghi");
+	gmr.LCShipment.sendKeys("abcdefghi");Thread.sleep(2000);
 	
 	//---------------------------------------------Upload File for ebooking-----------------------------
 	
@@ -1244,7 +894,8 @@ public class ACS_GMR {
 	jobtype.selectByVisibleText("Booking"); Thread.sleep(2000);
 	
 	Select jobid = new Select(driver.findElement(By.id("ctl00_hldPage_ddlJobs")));Thread.sleep(2000);  
-	jobid.selectByVisibleText("343"); Thread.sleep(2000);
+	jobid.selectByVisibleText("343");
+	 Thread.sleep(2000);
 	
 	}
 	
@@ -1308,7 +959,8 @@ public class ACS_GMR {
 		//Mouseover on an element
 		senttab.moveToElement(gmr.SentTabForEbooking).perform();
 		Thread.sleep(1000);
-		wm.JavascriptExecutorClick(driver, gmr.SentTabForEbooking);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.SentTabForEbooking);
+		Thread.sleep(1000);
 	}
 	
 	@Then("^To Verify Whether user is able to View the All Records of AWB in Track and Trace ACS_GMR$")
@@ -1322,6 +974,8 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.TrackTraceTabAWBNo);Thread.sleep(2000);
 		gmr.TrackTraceTabAWBNo.sendKeys("24052081");
+		
+		Thread.sleep(2000);
 	}
 	
 	@Then("^To verify whether user is able to send request of AWB stock to airline login ACS_GMR$")
@@ -1329,9 +983,7 @@ public class ACS_GMR {
 	
 		Actions awbstock = new Actions(driver);
 		awbstock.moveToElement(gmr.AWBStock).perform();
-		Thread.sleep(1000);
-	
-		
+		Thread.sleep(1000);	
 		
 		awbstock.moveToElement(gmr.AWBStock).perform();
 		Thread.sleep(1000);
@@ -1450,7 +1102,8 @@ public class ACS_GMR {
 		
       wm.JavascriptExecutorClick(driver, gmr.AirlineLogoutArrow);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.AirlineLogout);
+		Thread.sleep(2000);
 		
 	
 }
@@ -1502,7 +1155,8 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.AWBStockInventoryWithdrawn);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AWBStockInventoryExportExcel);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.AWBStockInventoryExportExcel);
+		Thread.sleep(2000);
 	}
 	
 	@Then("^To verify the AWB Status ACS_GMR$")
@@ -1529,7 +1183,8 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.AWBStatusWithdrwan);Thread.sleep(2000);
 		
-		wm.JavascriptExecutorClick(driver, gmr.AWBStatusExportToExcel);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.AWBStatusExportToExcel);
+		Thread.sleep(2000);
 	}
 	
 	@Then("^To verify whether the user is able to view the AWB from Sub Agent Inventory ACS_GMR$")
@@ -1594,7 +1249,9 @@ public class ACS_GMR {
 		
 		wm.JavascriptExecutorClick(driver, gmr.SubAgentAWBStatusWithdrawn);Thread.sleep(2000);
 		
-		//wm.JavascriptExecutorClick(driver, gmr.SubAgentAWBStatusExportToExcel);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.SubAgentAWBStatusExportToExcel);
+		  Thread.sleep(3000);
+		 
 	}
 	
 	@Then("^To verify whether user is able to View the Transaction Report From Sub-menu of Reports ACS_GMR$")
@@ -1628,7 +1285,8 @@ public class ACS_GMR {
 		wm.JavascriptExecutorClick(driver, gmr.TonnageReportAirport);Thread.sleep(2000);
 		gmr.TonnageReportAirport.sendKeys("HYD");
 		
-		wm.JavascriptExecutorClick(driver, gmr.TonnageReportExportToExcel);Thread.sleep(2000);
+		wm.JavascriptExecutorClick(driver, gmr.TonnageReportExportToExcel);
+		Thread.sleep(3000);
 	  }
 	}
 	
